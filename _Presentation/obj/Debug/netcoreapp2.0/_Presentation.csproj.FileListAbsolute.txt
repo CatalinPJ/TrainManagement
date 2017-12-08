@@ -1,0 +1,11 @@
+C:\Users\jolde\Desktop\Train Management\TrainManagement\_Presentation\bin\Debug\netcoreapp2.0\_Presentation.deps.json
+C:\Users\jolde\Desktop\Train Management\TrainManagement\_Presentation\bin\Debug\netcoreapp2.0\_Presentation.runtimeconfig.json
+C:\Users\jolde\Desktop\Train Management\TrainManagement\_Presentation\bin\Debug\netcoreapp2.0\_Presentation.runtimeconfig.dev.json
+C:\Users\jolde\Desktop\Train Management\TrainManagement\_Presentation\bin\Debug\netcoreapp2.0\_Presentation.dll
+C:\Users\jolde\Desktop\Train Management\TrainManagement\_Presentation\bin\Debug\netcoreapp2.0\_Presentation.pdb
+C:\Users\jolde\Desktop\Train Management\TrainManagement\_Presentation\obj\Debug\netcoreapp2.0\_Presentation.csprojResolveAssemblyReference.cache
+C:\Users\jolde\Desktop\Train Management\TrainManagement\_Presentation\obj\Debug\netcoreapp2.0\_Presentation.csproj.CoreCompileInputs.cache
+C:\Users\jolde\Desktop\Train Management\TrainManagement\_Presentation\obj\Debug\netcoreapp2.0\_Presentation.AssemblyInfoInputs.cache
+C:\Users\jolde\Desktop\Train Management\TrainManagement\_Presentation\obj\Debug\netcoreapp2.0\_Presentation.AssemblyInfo.cs
+C:\Users\jolde\Desktop\Train Management\TrainManagement\_Presentation\obj\Debug\netcoreapp2.0\_Presentation.dll
+C:\Users\jolde\Desktop\Train Management\TrainManagement\_Presentation\obj\Debug\netcoreapp2.0\_Presentation.pdb
