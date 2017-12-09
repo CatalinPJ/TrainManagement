@@ -8,7 +8,7 @@ namespace Data.Entities
         public int OriginStationCode { get; set; }
         public int DestinationStationCode { get; set; }
         public string Type { get; set; }
-        List<Station> Nodes { get; set; }
+        List<RouteNode> RouteNodes { get; set; }
 
     }
 }

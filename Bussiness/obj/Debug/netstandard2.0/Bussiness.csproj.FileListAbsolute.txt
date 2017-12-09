@@ -1,0 +1,9 @@
+C:\Users\jolde\Desktop\Train Management\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Bussiness.deps.json
+C:\Users\jolde\Desktop\Train Management\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Bussiness.dll
+C:\Users\jolde\Desktop\Train Management\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Bussiness.pdb
+C:\Users\jolde\Desktop\Train Management\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.csprojResolveAssemblyReference.cache
+C:\Users\jolde\Desktop\Train Management\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.csproj.CoreCompileInputs.cache
+C:\Users\jolde\Desktop\Train Management\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.AssemblyInfoInputs.cache
+C:\Users\jolde\Desktop\Train Management\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.AssemblyInfo.cs
+C:\Users\jolde\Desktop\Train Management\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.dll
+C:\Users\jolde\Desktop\Train Management\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.pdb

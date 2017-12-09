@@ -1,0 +1,9 @@
+C:\Users\jolde\Desktop\Train Management\TrainManagement\Data.Interfaces\bin\Debug\netstandard2.0\Data.Interfaces.deps.json
+C:\Users\jolde\Desktop\Train Management\TrainManagement\Data.Interfaces\bin\Debug\netstandard2.0\Data.Interfaces.dll
+C:\Users\jolde\Desktop\Train Management\TrainManagement\Data.Interfaces\bin\Debug\netstandard2.0\Data.Interfaces.pdb
+C:\Users\jolde\Desktop\Train Management\TrainManagement\Data.Interfaces\obj\Debug\netstandard2.0\Data.Interfaces.csprojResolveAssemblyReference.cache
+C:\Users\jolde\Desktop\Train Management\TrainManagement\Data.Interfaces\obj\Debug\netstandard2.0\Data.Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\jolde\Desktop\Train Management\TrainManagement\Data.Interfaces\obj\Debug\netstandard2.0\Data.Interfaces.AssemblyInfoInputs.cache
+C:\Users\jolde\Desktop\Train Management\TrainManagement\Data.Interfaces\obj\Debug\netstandard2.0\Data.Interfaces.AssemblyInfo.cs
+C:\Users\jolde\Desktop\Train Management\TrainManagement\Data.Interfaces\obj\Debug\netstandard2.0\Data.Interfaces.dll
+C:\Users\jolde\Desktop\Train Management\TrainManagement\Data.Interfaces\obj\Debug\netstandard2.0\Data.Interfaces.pdb
