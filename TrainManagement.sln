@@ -11,13 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-Presentation", "03-Prese
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04-Tests", "04-Tests", "{9CDC26B8-0FAC-4E77-B835-9E606241DEFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Entities", "Data.Entities\Data.Entities.csproj", "{0C1B3A79-4122-467F-A2D9-11FBD2C2FB76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.Domain", "Data.Entities\Data.Domain.csproj", "{0C1B3A79-4122-467F-A2D9-11FBD2C2FB76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Interfaces", "Data.Interfaces\Data.Interfaces.csproj", "{25EAA68D-BFE0-458C-80D4-FCE801049729}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.Persistance", "Data.Interfaces\Data.Persistance.csproj", "{25EAA68D-BFE0-458C-80D4-FCE801049729}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bussiness", "Bussiness\Bussiness.csproj", "{2556307D-159D-470E-BA7C-2C28E2A084FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bussiness", "Bussiness\Bussiness.csproj", "{2556307D-159D-470E-BA7C-2C28E2A084FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_Presentation", "_Presentation\_Presentation.csproj", "{3A5D1A88-1D13-4666-8FF2-265694484D1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_Presentation", "_Presentation\_Presentation.csproj", "{3A5D1A88-1D13-4666-8FF2-265694484D1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

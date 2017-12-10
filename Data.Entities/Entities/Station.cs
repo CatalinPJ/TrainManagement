@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Data.Entities
+namespace Data.Domain.Entities
 {
-    class Station
+    public class Station
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

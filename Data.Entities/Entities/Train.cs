@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Data.Entities
+namespace Data.Domain.Entities
 {
-    class Train
+    public class Train
     {
         public Guid Id { get; set; }
         public string Category { get; set; }

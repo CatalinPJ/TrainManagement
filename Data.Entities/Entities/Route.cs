@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-namespace Data.Entities
+namespace Data.Domain.Entities
 {
-    class Route
+    public class Route
     {
         public Guid Id { get; set; }
         public int OriginStationCode { get; set; }

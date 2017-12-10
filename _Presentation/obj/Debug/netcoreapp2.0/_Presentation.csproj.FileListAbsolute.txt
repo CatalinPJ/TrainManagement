@@ -9,3 +9,9 @@ C:\Users\jolde\Desktop\Train Management\TrainManagement\_Presentation\obj\Debug\
 C:\Users\jolde\Desktop\Train Management\TrainManagement\_Presentation\obj\Debug\netcoreapp2.0\_Presentation.AssemblyInfo.cs
 C:\Users\jolde\Desktop\Train Management\TrainManagement\_Presentation\obj\Debug\netcoreapp2.0\_Presentation.dll
 C:\Users\jolde\Desktop\Train Management\TrainManagement\_Presentation\obj\Debug\netcoreapp2.0\_Presentation.pdb
+C:\Users\jolde\Desktop\Train Management\TrainManagement\_Presentation\bin\Debug\netcoreapp2.0\Data.Domain.dll
+C:\Users\jolde\Desktop\Train Management\TrainManagement\_Presentation\bin\Debug\netcoreapp2.0\Data.Persistance.dll
+C:\Users\jolde\Desktop\Train Management\TrainManagement\_Presentation\bin\Debug\netcoreapp2.0\Data.Domain.pdb
+C:\Users\jolde\Desktop\Train Management\TrainManagement\_Presentation\bin\Debug\netcoreapp2.0\Data.Persistance.pdb
+C:\Users\jolde\Desktop\Train Management\TrainManagement\_Presentation\bin\Debug\netcoreapp2.0\Bussiness.dll
+C:\Users\jolde\Desktop\Train Management\TrainManagement\_Presentation\bin\Debug\netcoreapp2.0\Bussiness.pdb

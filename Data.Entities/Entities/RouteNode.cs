@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Data.Entities
+namespace Data.Domain.Entities
 {
-    class RouteNode : Station
+    public class RouteNode : Station
     {
         public new Guid Id { get; set; }
         public int DestinationStationCode { get; set; }

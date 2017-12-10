@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Data.Domain.Persistance;
+using Data.Persistance;
+using Data.Domain.Interfaces;
+using Bussiness;
+using Microsoft.EntityFrameworkCore;
 
 namespace _Presentation
 {
@@ -21,6 +22,10 @@ namespace _Presentation
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IDatabaseContext, DatabaseContext>();
+            services.AddTransient<ITicketRepository, TicketRepository>();
+            var connectionString = @"Server = .\SQLEXPRESS; Database = Trains.Development; Trusted_Connection = true; ";
+            services.AddDbContext<DatabaseContext>(option => option.UseSqlServer(connectionString));
             services.AddMvc();
         }
 
