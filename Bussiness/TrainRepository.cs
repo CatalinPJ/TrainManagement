@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Data.Domain.Entities;
 using Data.Domain.Interfaces;
 using Data.Persistance;

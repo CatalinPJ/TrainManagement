@@ -1,5 +1,3 @@
-using System;
-
 namespace _Presentation.Models
 {
     public class ErrorViewModel
