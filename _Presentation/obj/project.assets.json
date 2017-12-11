@@ -5034,7 +5034,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Data.Domain": "1.0.0"
+          "Data.Domain": "1.0.0",
+          "Data.Persistance": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Bussiness.dll": {}
@@ -13173,7 +13174,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jolde\\.nuget\\packages\\": {},
+    "C:\\Users\\Stefan\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -13182,17 +13183,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\jolde\\Desktop\\Train Management\\TrainManagement\\_Presentation\\_Presentation.csproj",
+      "projectUniqueName": "C:\\Users\\Stefan\\Source\\Repos\\TrainManagement\\_Presentation\\_Presentation.csproj",
       "projectName": "_Presentation",
-      "projectPath": "C:\\Users\\jolde\\Desktop\\Train Management\\TrainManagement\\_Presentation\\_Presentation.csproj",
-      "packagesPath": "C:\\Users\\jolde\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jolde\\Desktop\\Train Management\\TrainManagement\\_Presentation\\obj\\",
+      "projectPath": "C:\\Users\\Stefan\\Source\\Repos\\TrainManagement\\_Presentation\\_Presentation.csproj",
+      "packagesPath": "C:\\Users\\Stefan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Stefan\\Source\\Repos\\TrainManagement\\_Presentation\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\jolde\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Stefan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13205,14 +13206,14 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\jolde\\Desktop\\Train Management\\TrainManagement\\Data.Entities\\Data.Domain.csproj": {
-              "projectPath": "C:\\Users\\jolde\\Desktop\\Train Management\\TrainManagement\\Data.Entities\\Data.Domain.csproj"
+            "C:\\Users\\Stefan\\Source\\Repos\\TrainManagement\\Bussiness\\Bussiness.csproj": {
+              "projectPath": "C:\\Users\\Stefan\\Source\\Repos\\TrainManagement\\Bussiness\\Bussiness.csproj"
             },
-            "C:\\Users\\jolde\\Desktop\\Train Management\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj": {
-              "projectPath": "C:\\Users\\jolde\\Desktop\\Train Management\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj"
+            "C:\\Users\\Stefan\\Source\\Repos\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj": {
+              "projectPath": "C:\\Users\\Stefan\\Source\\Repos\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj"
             },
-            "C:\\Users\\jolde\\Desktop\\Train Management\\TrainManagement\\Bussiness\\Bussiness.csproj": {
-              "projectPath": "C:\\Users\\jolde\\Desktop\\Train Management\\TrainManagement\\Bussiness\\Bussiness.csproj"
+            "C:\\Users\\Stefan\\Source\\Repos\\TrainManagement\\Data.Entities\\Data.Domain.csproj": {
+              "projectPath": "C:\\Users\\Stefan\\Source\\Repos\\TrainManagement\\Data.Entities\\Data.Domain.csproj"
             }
           }
         }
@@ -13226,18 +13227,18 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+          "Microsoft.AspNetCore.All": {
             "target": "Package",
-            "version": "2.0.0"
+            "version": "[2.0.3, )"
           },
           "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "2.0",
+            "version": "[2.0.0, )",
             "autoReferenced": true
           },
-          "Microsoft.AspNetCore.All": {
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
-            "version": "2.0.3"
+            "version": "[2.0.0, )"
           }
         },
         "imports": [

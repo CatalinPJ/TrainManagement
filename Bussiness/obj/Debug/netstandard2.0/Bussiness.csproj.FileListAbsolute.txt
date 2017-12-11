@@ -9,3 +9,14 @@ C:\Users\jolde\Desktop\Train Management\TrainManagement\Bussiness\obj\Debug\nets
 C:\Users\jolde\Desktop\Train Management\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.pdb
 C:\Users\jolde\Desktop\Train Management\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Data.Domain.dll
 C:\Users\jolde\Desktop\Train Management\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Data.Domain.pdb
+C:\Users\Stefan\Source\Repos\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Bussiness.deps.json
+C:\Users\Stefan\Source\Repos\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Bussiness.dll
+C:\Users\Stefan\Source\Repos\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Bussiness.pdb
+C:\Users\Stefan\Source\Repos\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Data.Domain.dll
+C:\Users\Stefan\Source\Repos\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Data.Domain.pdb
+C:\Users\Stefan\Source\Repos\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.csprojResolveAssemblyReference.cache
+C:\Users\Stefan\Source\Repos\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.csproj.CoreCompileInputs.cache
+C:\Users\Stefan\Source\Repos\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.AssemblyInfoInputs.cache
+C:\Users\Stefan\Source\Repos\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.AssemblyInfo.cs
+C:\Users\Stefan\Source\Repos\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.dll
+C:\Users\Stefan\Source\Repos\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.pdb

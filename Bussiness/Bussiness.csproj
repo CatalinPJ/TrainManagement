@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Data.Entities\Data.Domain.csproj" />
+    <ProjectReference Include="..\Data.Interfaces\Data.Persistance.csproj" />
   </ItemGroup>
 
 </Project>

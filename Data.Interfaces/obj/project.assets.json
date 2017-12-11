@@ -2397,7 +2397,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jolde\\.nuget\\packages\\": {},
+    "C:\\Users\\Stefan\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -2406,17 +2406,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\jolde\\Desktop\\Train Management\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj",
+      "projectUniqueName": "C:\\Users\\Stefan\\Source\\Repos\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj",
       "projectName": "Data.Persistance",
-      "projectPath": "C:\\Users\\jolde\\Desktop\\Train Management\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj",
-      "packagesPath": "C:\\Users\\jolde\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jolde\\Desktop\\Train Management\\TrainManagement\\Data.Interfaces\\obj\\",
+      "projectPath": "C:\\Users\\Stefan\\Source\\Repos\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj",
+      "packagesPath": "C:\\Users\\Stefan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Stefan\\Source\\Repos\\TrainManagement\\Data.Interfaces\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\jolde\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Stefan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2429,8 +2429,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\jolde\\Desktop\\Train Management\\TrainManagement\\Data.Entities\\Data.Domain.csproj": {
-              "projectPath": "C:\\Users\\jolde\\Desktop\\Train Management\\TrainManagement\\Data.Entities\\Data.Domain.csproj"
+            "C:\\Users\\Stefan\\Source\\Repos\\TrainManagement\\Data.Entities\\Data.Domain.csproj": {
+              "projectPath": "C:\\Users\\Stefan\\Source\\Repos\\TrainManagement\\Data.Entities\\Data.Domain.csproj"
             }
           }
         }
@@ -2447,7 +2447,7 @@
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.0.0",
+            "version": "[2.0.0, )",
             "autoReferenced": true
           }
         },
