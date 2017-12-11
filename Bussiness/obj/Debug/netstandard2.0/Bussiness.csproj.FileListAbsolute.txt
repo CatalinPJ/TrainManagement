@@ -20,3 +20,5 @@ C:\Users\Stefan\Source\Repos\TrainManagement\Bussiness\obj\Debug\netstandard2.0\
 C:\Users\Stefan\Source\Repos\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.AssemblyInfo.cs
 C:\Users\Stefan\Source\Repos\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.dll
 C:\Users\Stefan\Source\Repos\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.pdb
+C:\Users\Stefan\Source\Repos\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Data.Persistance.dll
+C:\Users\Stefan\Source\Repos\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Data.Persistance.pdb

@@ -4059,7 +4059,8 @@
       },
       "Bussiness/1.0.0": {
         "dependencies": {
-          "Data.Domain": "1.0.0"
+          "Data.Domain": "1.0.0",
+          "Data.Persistance": "1.0.0"
         },
         "runtime": {
           "Bussiness.dll": {}

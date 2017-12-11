@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Data.Domain.Persistance;
 using Data.Persistance;
 using Data.Domain.Interfaces;
 using Bussiness;
