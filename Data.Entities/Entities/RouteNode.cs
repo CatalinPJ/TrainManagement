@@ -4,6 +4,11 @@ namespace Data.Domain.Entities
 {
     public class RouteNode : Station
     {
+        public RouteNode()
+        {
+            Id = Guid.NewGuid();
+        }
+
         public new Guid Id { get; set; }
         public int DestinationStationCode { get; set; }
         public int OriginStationCode { get; set; }

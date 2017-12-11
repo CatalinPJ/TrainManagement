@@ -4,6 +4,11 @@ namespace Data.Domain.Entities
 {
     public class Train
     {
+        public Train()
+        {
+            Id = Guid.NewGuid();
+        }
+
         public Guid Id { get; set; }
         public string Category { get; set; }
         public int CumulatedKm { get; set; }

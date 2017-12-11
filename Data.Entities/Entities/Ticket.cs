@@ -5,7 +5,7 @@ namespace Data.Domain.Entities
     {
         public Ticket()
         {
-
+            Id = Guid.NewGuid();
         }
         public Guid Id { get; set; }
         public Guid TrainId { get; set; }
