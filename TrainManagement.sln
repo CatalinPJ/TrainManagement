@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2003
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Data", "01-Data", "{D83FA7D2-5CF2-4D68-8A5A-171802E4DFFB}"
 EndProject
@@ -23,6 +23,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05-DbPopulate", "05-DbPopulate", "{B056D2F1-5862-4611-890A-9BB978B2835F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbPopulate", "DbPopulate\DbPopulate.csproj", "{9188FF26-C206-4ED9-851D-5DDBB1D48759}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +50,10 @@ Global
 		{3A5D1A88-1D13-4666-8FF2-265694484D1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A5D1A88-1D13-4666-8FF2-265694484D1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A5D1A88-1D13-4666-8FF2-265694484D1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9188FF26-C206-4ED9-851D-5DDBB1D48759}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9188FF26-C206-4ED9-851D-5DDBB1D48759}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9188FF26-C206-4ED9-851D-5DDBB1D48759}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9188FF26-C206-4ED9-851D-5DDBB1D48759}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +63,7 @@ Global
 		{25EAA68D-BFE0-458C-80D4-FCE801049729} = {D83FA7D2-5CF2-4D68-8A5A-171802E4DFFB}
 		{2556307D-159D-470E-BA7C-2C28E2A084FE} = {0A9A5E89-755F-4742-A7C7-E0EDB23D5F8D}
 		{3A5D1A88-1D13-4666-8FF2-265694484D1A} = {099478D2-7EB3-49BC-8AE4-B445EFC840BA}
+		{9188FF26-C206-4ED9-851D-5DDBB1D48759} = {B056D2F1-5862-4611-890A-9BB978B2835F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CAC03452-5899-4AF8-B51E-7FB36950A7D6}

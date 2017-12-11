@@ -16,3 +16,12 @@ C:\Users\Stefan\Source\Repos\TrainManagement\Data.Entities\obj\Debug\netstandard
 C:\Users\Stefan\Source\Repos\TrainManagement\Data.Entities\obj\Debug\netstandard2.0\Data.Domain.AssemblyInfo.cs
 C:\Users\Stefan\Source\Repos\TrainManagement\Data.Entities\obj\Debug\netstandard2.0\Data.Domain.dll
 C:\Users\Stefan\Source\Repos\TrainManagement\Data.Entities\obj\Debug\netstandard2.0\Data.Domain.pdb
+D:\Workspace\TrainManagement\Data.Entities\bin\Debug\netstandard2.0\Data.Domain.deps.json
+D:\Workspace\TrainManagement\Data.Entities\bin\Debug\netstandard2.0\Data.Domain.dll
+D:\Workspace\TrainManagement\Data.Entities\bin\Debug\netstandard2.0\Data.Domain.pdb
+D:\Workspace\TrainManagement\Data.Entities\obj\Debug\netstandard2.0\Data.Domain.csprojResolveAssemblyReference.cache
+D:\Workspace\TrainManagement\Data.Entities\obj\Debug\netstandard2.0\Data.Domain.csproj.CoreCompileInputs.cache
+D:\Workspace\TrainManagement\Data.Entities\obj\Debug\netstandard2.0\Data.Domain.AssemblyInfoInputs.cache
+D:\Workspace\TrainManagement\Data.Entities\obj\Debug\netstandard2.0\Data.Domain.AssemblyInfo.cs
+D:\Workspace\TrainManagement\Data.Entities\obj\Debug\netstandard2.0\Data.Domain.dll
+D:\Workspace\TrainManagement\Data.Entities\obj\Debug\netstandard2.0\Data.Domain.pdb
