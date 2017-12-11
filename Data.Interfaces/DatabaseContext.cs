@@ -1,6 +1,4 @@
-﻿using Data.Domain.Entities;
-using Data.Domain.Persistance;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace Data.Persistance
 {
@@ -14,6 +12,8 @@ namespace Data.Persistance
         /*public DbSet<Station> Stations { get; set; }
         public DbSet<Route> Routes { get; set; }
         public DbSet<RouteNode> RouteNodes { get; set; }*/
+
+        public DbSet<Data.Domain.Entities.Station> Stations { get; set; }
         public DbSet<Data.Domain.Entities.Ticket> Tickets { get; set; }
     }
 }
