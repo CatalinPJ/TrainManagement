@@ -9,7 +9,7 @@ namespace Data.Persistance
         DbSet<Data.Domain.Entities.Ticket> Tickets { get; set; }
         DbSet<Data.Domain.Entities.Train> Trains { get; set; }
         DbSet<Data.Domain.Entities.Station> Stations { get; set; }
-        /*DbSet<Route> Routes { get; set; }
-        DbSet<RouteNode> RouteNodes { get; set; }*/
+        DbSet<Data.Domain.Entities.RouteNode> RouteNodes { get; set; }
+        /*DbSet<Route> Routes { get; set; }*/
     }
 }

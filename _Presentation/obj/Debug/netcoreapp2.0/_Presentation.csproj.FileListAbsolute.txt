@@ -66,3 +66,20 @@ C:\Users\jolde\Desktop\TrainManagement\_Presentation\obj\Debug\netcoreapp2.0\_Pr
 C:\Users\jolde\Desktop\TrainManagement\_Presentation\obj\Debug\netcoreapp2.0\_Presentation.AssemblyInfo.cs
 C:\Users\jolde\Desktop\TrainManagement\_Presentation\obj\Debug\netcoreapp2.0\_Presentation.dll
 C:\Users\jolde\Desktop\TrainManagement\_Presentation\obj\Debug\netcoreapp2.0\_Presentation.pdb
+C:\Users\Anca Grigoriu\Desktop\git\TrainManagement\_Presentation\bin\Debug\netcoreapp2.0\_Presentation.deps.json
+C:\Users\Anca Grigoriu\Desktop\git\TrainManagement\_Presentation\bin\Debug\netcoreapp2.0\_Presentation.runtimeconfig.json
+C:\Users\Anca Grigoriu\Desktop\git\TrainManagement\_Presentation\bin\Debug\netcoreapp2.0\_Presentation.runtimeconfig.dev.json
+C:\Users\Anca Grigoriu\Desktop\git\TrainManagement\_Presentation\bin\Debug\netcoreapp2.0\_Presentation.dll
+C:\Users\Anca Grigoriu\Desktop\git\TrainManagement\_Presentation\bin\Debug\netcoreapp2.0\_Presentation.pdb
+C:\Users\Anca Grigoriu\Desktop\git\TrainManagement\_Presentation\bin\Debug\netcoreapp2.0\Bussiness.dll
+C:\Users\Anca Grigoriu\Desktop\git\TrainManagement\_Presentation\bin\Debug\netcoreapp2.0\Data.Domain.dll
+C:\Users\Anca Grigoriu\Desktop\git\TrainManagement\_Presentation\bin\Debug\netcoreapp2.0\Data.Persistance.dll
+C:\Users\Anca Grigoriu\Desktop\git\TrainManagement\_Presentation\bin\Debug\netcoreapp2.0\Bussiness.pdb
+C:\Users\Anca Grigoriu\Desktop\git\TrainManagement\_Presentation\bin\Debug\netcoreapp2.0\Data.Domain.pdb
+C:\Users\Anca Grigoriu\Desktop\git\TrainManagement\_Presentation\bin\Debug\netcoreapp2.0\Data.Persistance.pdb
+C:\Users\Anca Grigoriu\Desktop\git\TrainManagement\_Presentation\obj\Debug\netcoreapp2.0\_Presentation.csprojResolveAssemblyReference.cache
+C:\Users\Anca Grigoriu\Desktop\git\TrainManagement\_Presentation\obj\Debug\netcoreapp2.0\_Presentation.csproj.CoreCompileInputs.cache
+C:\Users\Anca Grigoriu\Desktop\git\TrainManagement\_Presentation\obj\Debug\netcoreapp2.0\_Presentation.AssemblyInfoInputs.cache
+C:\Users\Anca Grigoriu\Desktop\git\TrainManagement\_Presentation\obj\Debug\netcoreapp2.0\_Presentation.AssemblyInfo.cs
+C:\Users\Anca Grigoriu\Desktop\git\TrainManagement\_Presentation\obj\Debug\netcoreapp2.0\_Presentation.dll
+C:\Users\Anca Grigoriu\Desktop\git\TrainManagement\_Presentation\obj\Debug\netcoreapp2.0\_Presentation.pdb

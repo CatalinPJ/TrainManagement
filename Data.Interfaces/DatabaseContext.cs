@@ -14,6 +14,7 @@ namespace Data.Persistance
         public DbSet<Route> Routes { get; set; }
         public DbSet<RouteNode> RouteNodes { get; set; }*/
 
+        public DbSet<Data.Domain.Entities.RouteNode> RouteNodes { get; set; }
         public DbSet<Data.Domain.Entities.Station> Stations { get; set; }
         public DbSet<Data.Domain.Entities.Ticket> Tickets { get; set; }
     }
