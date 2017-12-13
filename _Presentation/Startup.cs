@@ -23,6 +23,8 @@ namespace _Presentation
         {
             services.AddTransient<IDatabaseContext, DatabaseContext>();
             services.AddTransient<ITicketRepository, TicketRepository>();
+            services.AddTransient<IStationRepository, StationRepository>();
+            services.AddTransient<ITrainRepository, TrainRepository>();
             var connectionString = @"Server = .\SQLEXPRESS; Database = Trains.Development; Trusted_Connection = true; ";
             services.AddDbContext<DatabaseContext>(option => option.UseSqlServer(connectionString));
             services.AddMvc();

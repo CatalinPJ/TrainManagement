@@ -4,6 +4,7 @@ using System.Xml;
 
 using Bussiness;
 using Data.Domain.Entities;
+using Data.Persistance;
 
 namespace DbPopulate
 {
@@ -13,7 +14,6 @@ namespace DbPopulate
         {
             FileStream xmlStream = new FileStream("trains.xml", FileMode.Open);
             XmlReader trainReader = XmlReader.Create(xmlStream);
-            
             //parse the trains from the xml
             
             while (trainReader.ReadToFollowing("Tren"))
@@ -71,9 +71,11 @@ namespace DbPopulate
             }
             foreach (var station in stations)
             {
-                Station currentStation = new Station();
-                currentStation.Name = station.Value;
-                currentStation.OfficialCode = station.Key;
+                Station currentStation = new Station
+                {
+                    Name = station.Value,
+                    OfficialCode = station.Key
+                };
 
                 //call to station repo to add current station
             }
@@ -123,7 +125,7 @@ namespace DbPopulate
                     routeReader.MoveToAttribute("StationareSecunde");
                     currentRouteNode.Standing = int.Parse(routeReader.Value);
 
-                    // add routenode through repo?
+                    // add routenode through repo? YES, we'll do
 
                     currentRoute.RouteNodes.Add(currentRouteNode);
 

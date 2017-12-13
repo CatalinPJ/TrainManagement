@@ -8,7 +8,7 @@ namespace Data.Domain.Interfaces
     {
         IReadOnlyList<Ticket> GetTickets();
         void CreateTicket(Ticket ticket);
-        void DeleteTicket(Ticket ticketId);
+        void DeleteTicket(Guid ticketId);
         void EditTicket(Ticket ticket);
         Ticket GetTicketById(Guid ticketId);
     }
