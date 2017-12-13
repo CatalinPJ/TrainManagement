@@ -13174,7 +13174,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Anca Grigoriu\\.nuget\\packages\\": {},
+    "C:\\Users\\jolde\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -13183,17 +13183,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Anca Grigoriu\\Desktop\\git\\TrainManagement\\_Presentation\\_Presentation.csproj",
+      "projectUniqueName": "C:\\Users\\jolde\\Desktop\\TrainManagement\\_Presentation\\_Presentation.csproj",
       "projectName": "_Presentation",
-      "projectPath": "C:\\Users\\Anca Grigoriu\\Desktop\\git\\TrainManagement\\_Presentation\\_Presentation.csproj",
-      "packagesPath": "C:\\Users\\Anca Grigoriu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Anca Grigoriu\\Desktop\\git\\TrainManagement\\_Presentation\\obj\\",
+      "projectPath": "C:\\Users\\jolde\\Desktop\\TrainManagement\\_Presentation\\_Presentation.csproj",
+      "packagesPath": "C:\\Users\\jolde\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jolde\\Desktop\\TrainManagement\\_Presentation\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Anca Grigoriu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jolde\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13206,14 +13206,14 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\Anca Grigoriu\\Desktop\\git\\TrainManagement\\Data.Entities\\Data.Domain.csproj": {
-              "projectPath": "C:\\Users\\Anca Grigoriu\\Desktop\\git\\TrainManagement\\Data.Entities\\Data.Domain.csproj"
+            "C:\\Users\\jolde\\Desktop\\TrainManagement\\Data.Entities\\Data.Domain.csproj": {
+              "projectPath": "C:\\Users\\jolde\\Desktop\\TrainManagement\\Data.Entities\\Data.Domain.csproj"
             },
-            "C:\\Users\\Anca Grigoriu\\Desktop\\git\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj": {
-              "projectPath": "C:\\Users\\Anca Grigoriu\\Desktop\\git\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj"
+            "C:\\Users\\jolde\\Desktop\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj": {
+              "projectPath": "C:\\Users\\jolde\\Desktop\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj"
             },
-            "C:\\Users\\Anca Grigoriu\\Desktop\\git\\TrainManagement\\Bussiness\\Bussiness.csproj": {
-              "projectPath": "C:\\Users\\Anca Grigoriu\\Desktop\\git\\TrainManagement\\Bussiness\\Bussiness.csproj"
+            "C:\\Users\\jolde\\Desktop\\TrainManagement\\Bussiness\\Bussiness.csproj": {
+              "projectPath": "C:\\Users\\jolde\\Desktop\\TrainManagement\\Bussiness\\Bussiness.csproj"
             }
           }
         }
@@ -13233,7 +13233,7 @@
           },
           "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "2.0.0",
+            "version": "2.0",
             "autoReferenced": true
           },
           "Microsoft.AspNetCore.All": {

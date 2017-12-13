@@ -105,9 +105,13 @@ namespace Data.Domain.Entities
 
                 routeReader.MoveToContent();
                 routeReader.ReadToDescendant("ElementTrasa");
+                int counter = 0;
                 do
                 {
                     RouteNode currentRouteNode = new RouteNode();
+
+                    routeReader.MoveToAttribute("DenStaOrigine");
+                    currentRouteNode.Name = routeReader.Value;
 
                     routeReader.MoveToAttribute("CodStaDest");
                     currentRouteNode.DestinationStationCode = int.Parse(routeReader.Value);
@@ -123,7 +127,8 @@ namespace Data.Domain.Entities
 
                     routeReader.MoveToAttribute("Km");
                     currentRouteNode.Km = int.Parse(routeReader.Value);
-
+                    currentRouteNode.OfficialCode = counter++;
+                    currentRouteNode.RouteId = currentRoute.Id;
                     /*
                      Parse Data
                     */
@@ -139,8 +144,15 @@ namespace Data.Domain.Entities
                 _routes.Add(currentRoute);
                 // add route through route repo
             }
+            xmlStream.Close();
             return _routes;
         }
+
+        /*public List<Route> GetRoutes()
+        {
+            List<Route> routes = new List<Route>();
+            return routes;
+        }*/
 
     }
 }

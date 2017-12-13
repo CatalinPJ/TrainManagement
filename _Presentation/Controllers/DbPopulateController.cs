@@ -3,6 +3,7 @@ using Data.Persistance;
 using Bussiness;
 using Data.Domain.Entities;
 using System.Collections.Generic;
+using System;
 
 namespace _Presentation.Controllers
 {
@@ -12,6 +13,8 @@ namespace _Presentation.Controllers
         TrainRepository trainReapository;
         TicketRepository ticketRepository;
         StationRepository stationRepository;
+        RouteRepository routeRepository;
+        RouteNodeRepository routeNodeRepository;
         DbPopulate dbPopulate;
         public DbPopulateController(DatabaseContext _databaseContext)
         {
@@ -19,6 +22,8 @@ namespace _Presentation.Controllers
             trainReapository = new TrainRepository(databaseContext);
             ticketRepository = new TicketRepository(databaseContext);
             stationRepository = new StationRepository(databaseContext);
+            routeRepository = new RouteRepository(databaseContext);
+            routeNodeRepository = new RouteNodeRepository(databaseContext);
 
             dbPopulate = new Data.Domain.Entities.DbPopulate();
 
@@ -36,9 +41,9 @@ namespace _Presentation.Controllers
         public ActionResult AddTrains()
         {
             List<Train> trains = dbPopulate.GetTrains();
-            foreach(var train in trains)
+            foreach (var train in trains)
             {
-                //trainReapository.CreateTrain(train);
+                trainReapository.CreateTrain(train);
             }
             return new EmptyResult();
         }
@@ -57,10 +62,11 @@ namespace _Presentation.Controllers
         [Route("DbPopulate/Routes")]
         public ActionResult AddRoutes()
         {
+            
             List<Route> routes = dbPopulate.GetRoutes();
             foreach (var route in routes)
             {
-                //trainReapository.CreateTrain(train);
+                routeRepository.CreateRoute(route);
             }
             return new EmptyResult();
         }

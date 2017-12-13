@@ -10,22 +10,22 @@ using Data.Persistance;
 
 namespace _Presentation.Controllers
 {
-    public class RouteNodesController : Controller
+    public class RoutesController : Controller
     {
         private readonly DatabaseContext _context;
 
-        public RouteNodesController(DatabaseContext context)
+        public RoutesController(DatabaseContext context)
         {
             _context = context;
         }
 
-        // GET: RouteNodes
+        // GET: Routes
         public async Task<IActionResult> Index()
         {
-            return View(await _context.RouteNodes.ToListAsync());
+            return View(await _context.Routes.ToListAsync());
         }
 
-        // GET: RouteNodes/Details/5
+        // GET: Routes/Details/5
         public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null)
@@ -33,40 +33,40 @@ namespace _Presentation.Controllers
                 return NotFound();
             }
 
-            var routeNode = await _context.RouteNodes
+            var route = await _context.Routes
                 .SingleOrDefaultAsync(m => m.Id == id);
-            if (routeNode == null)
+            if (route == null)
             {
                 return NotFound();
             }
 
-            return View(routeNode);
+            return View(route);
         }
 
-        // GET: RouteNodes/Create
+        // GET: Routes/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: RouteNodes/Create
+        // POST: Routes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,OfficialCode,DestinationStationCode,OriginStationCode,DestinationStationName,OriginStationName,Km,DepartureTime,ArrivalTime,Standing")] RouteNode routeNode)
+        public async Task<IActionResult> Create([Bind("Id,OriginStationCode,DestinationStationCode,Type")] Route route)
         {
             if (ModelState.IsValid)
             {
-                routeNode.Id = Guid.NewGuid();
-                _context.Add(routeNode);
+                route.Id = Guid.NewGuid();
+                _context.Add(route);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(routeNode);
+            return View(route);
         }
 
-        // GET: RouteNodes/Edit/5
+        // GET: Routes/Edit/5
         public async Task<IActionResult> Edit(Guid? id)
         {
             if (id == null)
@@ -74,22 +74,22 @@ namespace _Presentation.Controllers
                 return NotFound();
             }
 
-            var routeNode = await _context.RouteNodes.SingleOrDefaultAsync(m => m.Id == id);
-            if (routeNode == null)
+            var route = await _context.Routes.SingleOrDefaultAsync(m => m.Id == id);
+            if (route == null)
             {
                 return NotFound();
             }
-            return View(routeNode);
+            return View(route);
         }
 
-        // POST: RouteNodes/Edit/5
+        // POST: Routes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,OfficialCode,DestinationStationCode,OriginStationCode,DestinationStationName,OriginStationName,Km,DepartureTime,ArrivalTime,Standing")] RouteNode routeNode)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,OriginStationCode,DestinationStationCode,Type")] Route route)
         {
-            if (id != routeNode.Id)
+            if (id != route.Id)
             {
                 return NotFound();
             }
@@ -98,12 +98,12 @@ namespace _Presentation.Controllers
             {
                 try
                 {
-                    _context.Update(routeNode);
+                    _context.Update(route);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!RouteNodeExists(routeNode.Id))
+                    if (!RouteExists(route.Id))
                     {
                         return NotFound();
                     }
@@ -114,10 +114,10 @@ namespace _Presentation.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(routeNode);
+            return View(route);
         }
 
-        // GET: RouteNodes/Delete/5
+        // GET: Routes/Delete/5
         public async Task<IActionResult> Delete(Guid? id)
         {
             if (id == null)
@@ -125,30 +125,30 @@ namespace _Presentation.Controllers
                 return NotFound();
             }
 
-            var routeNode = await _context.RouteNodes
+            var route = await _context.Routes
                 .SingleOrDefaultAsync(m => m.Id == id);
-            if (routeNode == null)
+            if (route == null)
             {
                 return NotFound();
             }
 
-            return View(routeNode);
+            return View(route);
         }
 
-        // POST: RouteNodes/Delete/5
+        // POST: Routes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var routeNode = await _context.RouteNodes.SingleOrDefaultAsync(m => m.Id == id);
-            _context.RouteNodes.Remove(routeNode);
+            var route = await _context.Routes.SingleOrDefaultAsync(m => m.Id == id);
+            _context.Routes.Remove(route);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool RouteNodeExists(Guid id)
+        private bool RouteExists(Guid id)
         {
-            return _context.RouteNodes.Any(e => e.Id == id);
+            return _context.Routes.Any(e => e.Id == id);
         }
     }
 }

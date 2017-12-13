@@ -8,7 +8,7 @@ using Data.Persistance;
 
 namespace Bussiness
 {
-    class RouteNodeRepository : IRouteNodeRepository
+    public class RouteNodeRepository : IRouteNodeRepository
     {
         private readonly IDatabaseContext _databaseContext;
 

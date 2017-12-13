@@ -15,6 +15,16 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OfficialCode" class="control-label"></label>
+                <input asp-for="OfficialCode" class="form-control" />
+                <span asp-validation-for="OfficialCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="DestinationStationCode" class="control-label"></label>
                 <input asp-for="DestinationStationCode" class="form-control" />
                 <span asp-validation-for="DestinationStationCode" class="text-danger"></span>
@@ -40,19 +50,19 @@
                 <span asp-validation-for="Km" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="DepartureTime" class="control-label"></label>
+                <input asp-for="DepartureTime" class="form-control" />
+                <span asp-validation-for="DepartureTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArrivalTime" class="control-label"></label>
+                <input asp-for="ArrivalTime" class="form-control" />
+                <span asp-validation-for="ArrivalTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Standing" class="control-label"></label>
                 <input asp-for="Standing" class="form-control" />
                 <span asp-validation-for="Standing" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="OfficialCode" class="control-label"></label>
-                <input asp-for="OfficialCode" class="form-control" />
-                <span asp-validation-for="OfficialCode" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />
