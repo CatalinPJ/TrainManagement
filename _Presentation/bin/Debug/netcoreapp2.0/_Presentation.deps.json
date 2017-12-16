@@ -4082,7 +4082,9 @@
       },
       "Data.Persistance/1.0.0": {
         "dependencies": {
-          "Data.Domain": "1.0.0"
+          "Data.Domain": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.0.1",
+          "Microsoft.EntityFrameworkCore.Tools": "2.0.1"
         },
         "runtime": {
           "Data.Persistance.dll": {}

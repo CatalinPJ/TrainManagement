@@ -27,7 +27,7 @@ namespace _Presentation
             services.AddTransient<IRouteNodeRepository, RouteNodeRepository>();
             services.AddTransient<ITrainRepository, TrainRepository>();
             services.AddTransient<IRouteRepository, RouteRepository>();
-            var connectionString = @"Server = .\SQLEXPRESS; Database = Trains.Development; Trusted_Connection = true; ";
+            var connectionString = @"Server=.\SQLEXPRESS;Database=Trains.Development;Trusted_Connection=true;";
             services.AddDbContext<DatabaseContext>(option => option.UseSqlServer(connectionString));
             services.AddMvc();
         }
