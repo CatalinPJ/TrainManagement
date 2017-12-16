@@ -20,9 +20,40 @@ namespace Presentation.Controllers
         }
 
         // GET: Stations
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            return View(await _context.Stations.ToListAsync());
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["OfficialCodeSortParm"] = sortOrder == "OfficialCode" ? "OfficialCode_desc" : "OfficialCode";
+            ViewData["CurrentFilter"] = searchString;
+
+            var stations = from s in _context.Stations
+                           select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                stations = stations.Where(s => s.Name.StartsWith(searchString)
+                                       || s.OfficialCode.ToString().StartsWith(searchString)
+                                       || s.Name.Contains(searchString)
+                                       || s.OfficialCode.ToString().Contains(searchString)).OrderBy(
+                                          s => s.Name.StartsWith(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    stations = stations.OrderByDescending(s => s.Name);
+                    break;
+                case "OfficialCode":
+                    stations = stations.OrderBy(s => s.OfficialCode);
+                    break;
+                case "OfficialCode_desc":
+                    stations = stations.OrderByDescending(s => s.OfficialCode);
+                    break;
+                default:
+                    stations = stations.OrderBy(s => s.Name);
+                    break;
+            }
+            return View(await stations.AsNoTracking().ToListAsync());
         }
 
         // GET: Stations/Details/5
