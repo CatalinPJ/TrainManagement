@@ -20,11 +20,22 @@ namespace Presentation.Controllers
         }
 
         // GET: Stations
-        public async Task<IActionResult> Index(string sortOrder, string searchString)
+        public async Task<IActionResult> Index(string sortOrder, string searchString, string currentFilter, int? page)
         {
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewData["OfficialCodeSortParm"] = sortOrder == "OfficialCode" ? "OfficialCode_desc" : "OfficialCode";
             ViewData["CurrentFilter"] = searchString;
+            ViewData["CurrentSort"] = sortOrder;
+            int pageSize = 10;
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
 
             var stations = from s in _context.Stations
                            select s;
@@ -53,7 +64,8 @@ namespace Presentation.Controllers
                     stations = stations.OrderBy(s => s.Name);
                     break;
             }
-            return View(await stations.AsNoTracking().ToListAsync());
+
+            return View(await PaginatedList<Station>.CreateAsync(stations.AsNoTracking(), page ?? 1, pageSize));
         }
 
         // GET: Stations/Details/5
