@@ -1,0 +1,61 @@
+﻿@model List<List<Data.Domain.Entities.RouteNode>>
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+@ViewBag.Total
+@ViewBag.Origin
+@ViewBag.Destination
+
+
+<h4>Ticket</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        @foreach (var routeNode in Model)
+        {
+            <h2>Route:</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Arrival
+                    </th>
+                    <th>
+                        Departure
+                    </th>
+                    <th>
+                        Station
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in routeNode)
+                {
+                    <tr>
+                        <td>
+                            @string.Format("{0:D2}:{1:D2} ({2})", TimeSpan.FromSeconds(item.ArrivalTime).Hours, TimeSpan.FromSeconds(item.ArrivalTime).Minutes, item.ArrivalTime)
+                        </td>
+                        <td>
+                            @string.Format("{0:D2}:{1:D2} ({2})", TimeSpan.FromSeconds(item.DepartureTime).Hours, TimeSpan.FromSeconds(item.DepartureTime).Minutes, item.DepartureTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OriginStationName)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        }
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

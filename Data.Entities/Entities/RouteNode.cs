@@ -20,8 +20,8 @@ namespace Data.Domain.Entities
         public string DestinationStationName { get; set; }
         public string OriginStationName { get; set; }
         public int Km { get; set; }
-        public DateTime DepartureTime { get; set; }
-        public DateTime ArrivalTime { get; set; }
+        public long DepartureTime { get; set; }
+        public long ArrivalTime { get; set; }
         public int Standing { get; set; }  // in seconds
     }
 }
