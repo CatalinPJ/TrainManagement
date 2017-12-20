@@ -19,6 +19,11 @@ namespace Presentation
 {
     public class Startup
     {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+        /*
         public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
             Configuration = configuration;
@@ -28,6 +33,7 @@ namespace Presentation
                 builder.AddUserSecrets<Startup>();
             }
         }
+        */
 
         public IConfiguration Configuration { get; }
 
@@ -46,10 +52,12 @@ namespace Presentation
             services.AddDbContext<DatabaseContext>(option => option.UseSqlServer(connectionString));
             services.AddMvc();
 
+           
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
+            /*
             services.AddAuthentication().AddFacebook(facebookOptions =>
             {
                 facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
@@ -60,7 +68,7 @@ namespace Presentation
             {
                 options.Filters.Add(new RequireHttpsAttribute());
             });
-
+            */
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
 
@@ -82,9 +90,11 @@ namespace Presentation
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            /*
             app.UseStaticFiles();
 
             app.UseAuthentication();
+            */
 
             app.UseMvc(routes =>
             {
