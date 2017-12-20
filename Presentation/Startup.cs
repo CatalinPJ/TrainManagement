@@ -14,14 +14,23 @@ using Presentation.Services;
 using Data.Domain.Interfaces;
 using Bussiness;
 using Data.Persistance;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Rewrite;
 
 namespace Presentation
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
             Configuration = configuration;
+            var builder = new ConfigurationBuilder();
+            if (env.IsDevelopment())
+            {
+                builder.AddUserSecrets<Startup>();
+            }
         }
 
         public IConfiguration Configuration { get; }
@@ -29,13 +38,13 @@ namespace Presentation
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddTransient<IDatabaseContext, DatabaseContext>();
             services.AddTransient<ITicketRepository, TicketRepository>();
             services.AddTransient<IStationRepository, StationRepository>();
             services.AddTransient<IRouteNodeRepository, RouteNodeRepository>();
             services.AddTransient<ITrainRepository, TrainRepository>();
             services.AddTransient<IRouteRepository, RouteRepository>();
+
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -47,6 +56,17 @@ namespace Presentation
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
+
+            services.AddAuthentication().AddFacebook(facebookOptions =>
+            {
+                facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
+                facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+            });
+
+            services.Configure<MvcOptions>(options =>
+            {
+                options.Filters.Add(new RequireHttpsAttribute());
+            });
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
@@ -78,6 +98,7 @@ namespace Presentation
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
         }
     }
 }
