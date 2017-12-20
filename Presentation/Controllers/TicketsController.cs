@@ -48,8 +48,7 @@ namespace Presentation.Controllers
         {
             RouteFinder routeFinder = new RouteFinder(_context);
             List<Train> trains = routeFinder.GetTrains(originStationCode, destinationStationCode);
-
-            ViewBag.Total = trains[0].RouteNodes.Count;
+            ViewBag.Total = trains.Count;
             return View(trains);
             //return View(ticket);
         }
