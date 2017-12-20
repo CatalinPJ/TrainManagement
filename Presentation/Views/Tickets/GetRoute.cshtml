@@ -1,4 +1,4 @@
-﻿@model List<string>
+﻿@model List<Data.Domain.Entities.Train>
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -18,13 +18,13 @@
     <thead>
         <tr>
             <th>
-                Arrival
+                No
             </th>
             <th>
-                Departure
+                From
             </th>
             <th>
-                Station
+                To
             </th>
         </tr>
     </thead>
@@ -33,7 +33,13 @@
     {
             <tr>
                 <td>
-                   @train
+                   @train.OfficialNumber
+                </td>
+                <td>
+                    @train.OriginStationCode
+                </td>
+                <td>
+                    @train.DestinationStationCode
                 </td>
             </tr>
     }

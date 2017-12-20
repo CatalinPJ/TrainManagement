@@ -47,11 +47,9 @@ namespace Presentation.Controllers
         public async Task<IActionResult> GetRoute(int originStationCode, int destinationStationCode)
         {
             RouteFinder routeFinder = new RouteFinder(_context);
-            List<string> trains = routeFinder.GetTrains(originStationCode, destinationStationCode);
+            List<Train> trains = routeFinder.GetTrains(originStationCode, destinationStationCode);
 
-            ViewBag.Total = trains.Count();
-            ViewBag.Origin = originStationCode;
-            ViewBag.Destination = destinationStationCode;
+            
             return View(trains);
             //return View(ticket);
         }

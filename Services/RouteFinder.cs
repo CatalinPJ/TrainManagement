@@ -55,9 +55,10 @@ namespace Services
             }
             return nodes;
         }*/
-        public List<string> GetTrains(int originCode, int destinationCode)
+        public List<Train> GetTrains(int originCode, int destinationCode)
         {
-            List<string> nodes = new List<string>();
+            List<Train> all_trains = _context.Trains.ToList();
+            List<Train> trains = new List<Train>();
             /*List<Route> routes = _context.Routes.ToList();
             List<RouteNode> routeNodes = _context.RouteNodes.ToList();
             foreach (var item in routes)
@@ -96,7 +97,7 @@ namespace Services
                 }
 
             }*/
-            return nodes;
+            return trains;
         }
     }
 }

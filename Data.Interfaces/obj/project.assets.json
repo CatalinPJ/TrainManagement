@@ -3418,7 +3418,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Elisa\\.nuget\\packages\\": {},
+    "C:\\Users\\jolde\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -3427,17 +3427,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Elisa\\Desktop\\NET Proiect\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj",
+      "projectUniqueName": "C:\\Users\\jolde\\Desktop\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj",
       "projectName": "Data.Persistance",
-      "projectPath": "C:\\Users\\Elisa\\Desktop\\NET Proiect\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj",
-      "packagesPath": "C:\\Users\\Elisa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Elisa\\Desktop\\NET Proiect\\TrainManagement\\Data.Interfaces\\obj\\",
+      "projectPath": "C:\\Users\\jolde\\Desktop\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj",
+      "packagesPath": "C:\\Users\\jolde\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jolde\\Desktop\\TrainManagement\\Data.Interfaces\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Elisa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jolde\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3450,8 +3450,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\Elisa\\Desktop\\NET Proiect\\TrainManagement\\Data.Entities\\Data.Domain.csproj": {
-              "projectPath": "C:\\Users\\Elisa\\Desktop\\NET Proiect\\TrainManagement\\Data.Entities\\Data.Domain.csproj"
+            "C:\\Users\\jolde\\Desktop\\TrainManagement\\Data.Entities\\Data.Domain.csproj": {
+              "projectPath": "C:\\Users\\jolde\\Desktop\\TrainManagement\\Data.Entities\\Data.Domain.csproj"
             }
           }
         }

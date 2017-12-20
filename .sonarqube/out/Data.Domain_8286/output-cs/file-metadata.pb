@@ -1,0 +1,9 @@
+M
+KC:\Users\jolde\Desktop\TrainManagement\Data.Entities\Entities\DbPopulate.csL
+JC:\Users\jolde\Desktop\TrainManagement\Data.Entities\Entities\RouteNode.csJ
+HC:\Users\jolde\Desktop\TrainManagement\Data.Entities\Entities\Station.csI
+GC:\Users\jolde\Desktop\TrainManagement\Data.Entities\Entities\Ticket.csH
+FC:\Users\jolde\Desktop\TrainManagement\Data.Entities\Entities\Train.csP
+NC:\Users\jolde\Desktop\TrainManagement\Data.Entities\Interfaces\IRepository.csU
+QC:\Users\jolde\AppData\Local\Temp\.NETStandard,Version=v2.0.AssemblyAttributes.csm
+iC:\Users\jolde\Desktop\TrainManagement\Data.Entities\obj\Debug\netstandard2.0\Data.Domain.AssemblyInfo.cs

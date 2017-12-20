@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>Data.Domain</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>0c1b3a79-4122-467f-a2d9-11fbd2c2fb76</ProjectGuid>
+  <FullPath>C:\Users\jolde\Desktop\TrainManagement\Data.Entities\Data.Domain.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="C:\Users\jolde\Desktop\TrainManagement\.sonarqube\out\Data.Domain_8286\FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.cs.roslyn.reportFilePath">C:\Users\jolde\Desktop\TrainManagement\Data.Entities\bin\Debug\netstandard2.0\Data.Domain.dll.RoslynCA.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPath">C:\Users\jolde\Desktop\TrainManagement\.sonarqube\out\Data.Domain_8286</Property>
+  </AnalysisSettings>
+</ProjectInfo>
