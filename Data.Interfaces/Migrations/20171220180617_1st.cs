@@ -9,20 +9,6 @@ namespace Data.Persistance.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Routes",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(nullable: false),
-                    DestinationStationCode = table.Column<int>(nullable: false),
-                    OriginStationCode = table.Column<int>(nullable: false),
-                    Type = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Routes", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Stations",
                 columns: table => new
                 {
@@ -67,9 +53,11 @@ namespace Data.Persistance.Migrations
                     Id = table.Column<Guid>(nullable: false),
                     Category = table.Column<string>(nullable: true),
                     CumulatedKm = table.Column<int>(nullable: false),
+                    DestinationStationCode = table.Column<int>(nullable: false),
                     Length = table.Column<int>(nullable: false),
                     OfficialNumber = table.Column<string>(nullable: true),
                     OperatorCode = table.Column<int>(nullable: false),
+                    OriginStationCode = table.Column<int>(nullable: false),
                     OwnerCode = table.Column<int>(nullable: false),
                     Rank = table.Column<int>(nullable: false),
                     Weight = table.Column<int>(nullable: false)
@@ -93,24 +81,24 @@ namespace Data.Persistance.Migrations
                     OfficialCode = table.Column<int>(nullable: false),
                     OriginStationCode = table.Column<int>(nullable: false),
                     OriginStationName = table.Column<string>(nullable: true),
-                    RouteId = table.Column<Guid>(nullable: false),
-                    Standing = table.Column<int>(nullable: false)
+                    Standing = table.Column<int>(nullable: false),
+                    TrainId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_RouteNodes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_RouteNodes_Routes_RouteId",
-                        column: x => x.RouteId,
-                        principalTable: "Routes",
+                        name: "FK_RouteNodes_Trains_TrainId",
+                        column: x => x.TrainId,
+                        principalTable: "Trains",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_RouteNodes_RouteId",
+                name: "IX_RouteNodes_TrainId",
                 table: "RouteNodes",
-                column: "RouteId");
+                column: "TrainId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -126,9 +114,6 @@ namespace Data.Persistance.Migrations
 
             migrationBuilder.DropTable(
                 name: "Trains");
-
-            migrationBuilder.DropTable(
-                name: "Routes");
         }
     }
 }

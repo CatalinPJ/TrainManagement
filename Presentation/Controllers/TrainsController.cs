@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Bussiness;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Data.Domain.Entities;
 using Data.Domain.Interfaces;
@@ -30,20 +28,19 @@ namespace Presentation.Controllers
         }
 
         // GET: Trains/Details/5
-        public async Task<IActionResult> Details(Guid? id)
+        public async Task<IActionResult> Details(string officialNumber)
         {
-            if (id == null)
+            if (officialNumber == null)
             {
                 return NotFound();
             }
 
             var train = await _context.Trains
-                .SingleOrDefaultAsync(m => m.Id == id);
+                .SingleOrDefaultAsync(m => m.OfficialNumber == officialNumber);
             if (train == null)
             {
                 return NotFound();
             }
-
             return View(train);
         }
 

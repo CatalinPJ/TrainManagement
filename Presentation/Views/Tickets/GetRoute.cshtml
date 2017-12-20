@@ -1,4 +1,4 @@
-﻿@model List<List<Data.Domain.Entities.RouteNode>>
+﻿@model List<string>
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -14,41 +14,31 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        @foreach (var routeNode in Model)
-        {
-            <h2>Route:</h2>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>
-                        Arrival
-                    </th>
-                    <th>
-                        Departure
-                    </th>
-                    <th>
-                        Station
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in routeNode)
-                {
-                    <tr>
-                        <td>
-                            @string.Format("{0:D2}:{1:D2} ({2})", TimeSpan.FromSeconds(item.ArrivalTime).Hours, TimeSpan.FromSeconds(item.ArrivalTime).Minutes, item.ArrivalTime)
-                        </td>
-                        <td>
-                            @string.Format("{0:D2}:{1:D2} ({2})", TimeSpan.FromSeconds(item.DepartureTime).Hours, TimeSpan.FromSeconds(item.DepartureTime).Minutes, item.DepartureTime)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.OriginStationName)
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-        }
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Arrival
+            </th>
+            <th>
+                Departure
+            </th>
+            <th>
+                Station
+            </th>
+        </tr>
+    </thead>
+<tbody>
+    @foreach (var train in Model)
+    {
+            <tr>
+                <td>
+                   @train
+                </td>
+            </tr>
+    }
+    </tbody>
+    </table>
     </div>
 </div>
 

@@ -9,7 +9,6 @@ using Presentation.Models;
 using Presentation.Services;
 using Data.Domain.Interfaces;
 using Bussiness;
-using Data.Domain.Entities;
 using Data.Persistance;
 
 namespace Presentation
@@ -28,11 +27,6 @@ namespace Presentation
         {
 
             services.AddTransient<IDatabaseContext, DatabaseContext>();
-            services.AddTransient<ITicketRepository, TicketRepository>();
-            services.AddTransient<IStationRepository, StationRepository>();
-//            services.AddTransient<IRouteNodeRepository, RouteNodeRepository>();
-            services.AddTransient<ITrainRepository, TrainRepository>();
-            services.AddTransient<IRouteRepository, RouteRepository>();
 //            services.AddTransient(typeof(IDatabaseContextGeneric<>), typeof(DatabaseContextGeneric<>));
             services.AddTransient(typeof(IRepository<>), typeof(GenericRepository<>));
 

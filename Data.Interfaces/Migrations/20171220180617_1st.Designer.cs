@@ -11,7 +11,7 @@ using System;
 namespace Data.Persistance.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20171217201220_1st")]
+    [Migration("20171220180617_1st")]
     partial class _1st
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -19,22 +19,6 @@ namespace Data.Persistance.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.0.1-rtm-125");
-
-            modelBuilder.Entity("Data.Domain.Entities.Route", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("DestinationStationCode");
-
-                    b.Property<int>("OriginStationCode");
-
-                    b.Property<string>("Type");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Routes");
-                });
 
             modelBuilder.Entity("Data.Domain.Entities.RouteNode", b =>
                 {
@@ -59,13 +43,13 @@ namespace Data.Persistance.Migrations
 
                     b.Property<string>("OriginStationName");
 
-                    b.Property<Guid>("RouteId");
-
                     b.Property<int>("Standing");
+
+                    b.Property<Guid>("TrainId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RouteId");
+                    b.HasIndex("TrainId");
 
                     b.ToTable("RouteNodes");
                 });
@@ -131,11 +115,15 @@ namespace Data.Persistance.Migrations
 
                     b.Property<int>("CumulatedKm");
 
+                    b.Property<int>("DestinationStationCode");
+
                     b.Property<int>("Length");
 
                     b.Property<string>("OfficialNumber");
 
                     b.Property<int>("OperatorCode");
+
+                    b.Property<int>("OriginStationCode");
 
                     b.Property<int>("OwnerCode");
 
@@ -150,9 +138,9 @@ namespace Data.Persistance.Migrations
 
             modelBuilder.Entity("Data.Domain.Entities.RouteNode", b =>
                 {
-                    b.HasOne("Data.Domain.Entities.Route")
+                    b.HasOne("Data.Domain.Entities.Train")
                         .WithMany("RouteNodes")
-                        .HasForeignKey("RouteId")
+                        .HasForeignKey("TrainId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

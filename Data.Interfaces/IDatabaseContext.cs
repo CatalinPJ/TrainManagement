@@ -10,6 +10,5 @@ namespace Data.Persistance
         DbSet<Data.Domain.Entities.Train> Trains { get; set; }
         DbSet<Data.Domain.Entities.Station> Stations { get; set; }
         DbSet<Data.Domain.Entities.RouteNode> RouteNodes { get; set; }
-        DbSet<Data.Domain.Entities.Route> Routes { get; set; }
     }
 }

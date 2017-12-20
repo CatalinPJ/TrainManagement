@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Data.Domain.Entities
 {
@@ -7,6 +8,7 @@ namespace Data.Domain.Entities
         public Train()
         {
             Id = Guid.NewGuid();
+            RouteNodes = new List<RouteNode>();
         }
 
         public Guid Id { get; set; }
@@ -18,5 +20,8 @@ namespace Data.Domain.Entities
         public int OwnerCode { get; set; }
         public int Rank { get; set; }
         public int Weight { get; set; }
+        public int OriginStationCode { get; set; }
+        public int DestinationStationCode { get; set; }
+        public List<RouteNode> RouteNodes { get; set; }
     }
 }

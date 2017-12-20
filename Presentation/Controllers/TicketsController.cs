@@ -47,23 +47,12 @@ namespace Presentation.Controllers
         public async Task<IActionResult> GetRoute(int originStationCode, int destinationStationCode)
         {
             RouteFinder routeFinder = new RouteFinder(_context);
-            List<List<RouteNode>>nodes = routeFinder.GetNodes(originStationCode, destinationStationCode);
-            List<List<RouteNode>> result = new List<List<RouteNode>>();
-            foreach (var routeNodes in nodes)
-            {
-                //routeNodes.Sort((o1, o2) => o1.ArrivalTime.CompareTo(o2.ArrivalTime));
-                List<RouteNode> nod = routeNodes.OrderBy(o => o.ArrivalTime).ToList();
-                result.Add(nod);
-                /*routeNodes.Sort(delegate (RouteNode p1, RouteNode p2)
-                {
-                    return p1.DepartureTime.CompareTo(p2.DepartureTime);
-                });*/
-                //result.Add(routeNodes);
-            }
-            ViewBag.Total = nodes.Count();
+            List<string> trains = routeFinder.GetTrains(originStationCode, destinationStationCode);
+
+            ViewBag.Total = trains.Count();
             ViewBag.Origin = originStationCode;
             ViewBag.Destination = destinationStationCode;
-            return View(result);
+            return View(trains);
             //return View(ticket);
         }
 
