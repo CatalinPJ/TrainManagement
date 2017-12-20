@@ -74,3 +74,16 @@ C:\Users\Elisa\Desktop\NET Proiect\TrainManagement\Bussiness\obj\Debug\netstanda
 C:\Users\Elisa\Desktop\NET Proiect\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.AssemblyInfo.cs
 C:\Users\Elisa\Desktop\NET Proiect\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.dll
 C:\Users\Elisa\Desktop\NET Proiect\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.pdb
+C:\Users\Stefan\Documents\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Bussiness.deps.json
+C:\Users\Stefan\Documents\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Bussiness.dll
+C:\Users\Stefan\Documents\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Bussiness.pdb
+C:\Users\Stefan\Documents\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Data.Domain.dll
+C:\Users\Stefan\Documents\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Data.Persistance.dll
+C:\Users\Stefan\Documents\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Data.Domain.pdb
+C:\Users\Stefan\Documents\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Data.Persistance.pdb
+C:\Users\Stefan\Documents\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.csprojResolveAssemblyReference.cache
+C:\Users\Stefan\Documents\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.csproj.CoreCompileInputs.cache
+C:\Users\Stefan\Documents\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.AssemblyInfoInputs.cache
+C:\Users\Stefan\Documents\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.AssemblyInfo.cs
+C:\Users\Stefan\Documents\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.dll
+C:\Users\Stefan\Documents\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.pdb
