@@ -8,7 +8,7 @@ using Data.Persistance;
 
 namespace Bussiness
 {
-    public class RouteNodeRepository : IRouteNodeRepository
+    public class RouteNodeRepository : IRepository<RouteNode>
     {
         private readonly IDatabaseContext _databaseContext;
 
@@ -17,31 +17,31 @@ namespace Bussiness
             _databaseContext = databaseContext;
         }
 
-        public IReadOnlyList<RouteNode> GetRouteNodes()
+        public IReadOnlyList<RouteNode> GetAll()
         {
             return _databaseContext.RouteNodes.ToList();
         }
 
-        public void CreateRouteNode(RouteNode routeNode)
+        public void Create(RouteNode routeNode)
         {
             _databaseContext.RouteNodes.Add(routeNode);
             _databaseContext.SaveChanges();
         }
 
-        public void DeleteRouteNode(Guid routeNodeId)
+        public void Delete(Guid routeNodeId)
         {
-            var routeNode = GetRouteNodeById(routeNodeId);
+            var routeNode = GetById(routeNodeId);
             _databaseContext.RouteNodes.Remove(routeNode);
             _databaseContext.SaveChanges();
         }
 
-        public void EditRouteNode(RouteNode routeNode)
+        public void Edit(RouteNode routeNode)
         {
             _databaseContext.RouteNodes.Update(routeNode);
             _databaseContext.SaveChanges();
         }
 
-        public RouteNode GetRouteNodeById(Guid routeNodeId)
+        public RouteNode GetById(Guid routeNodeId)
         {
             return _databaseContext.RouteNodes.FirstOrDefault(n => n.Id == routeNodeId);
         }

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Data.Domain.Entities;
+using Data.Domain.Interfaces;
 using Data.Persistance;
 
 namespace Presentation.Controllers
@@ -14,9 +15,9 @@ namespace Presentation.Controllers
     public class TrainsController : Controller
     {
         private readonly DatabaseContext _context;
-        private readonly GenericRepository<Train> _repository;
+        private readonly IRepository<Train> _repository;
 
-        public TrainsController(DatabaseContext context, GenericRepository<Train> repository)
+        public TrainsController(DatabaseContext context, IRepository<Train> repository)
         {
             _context = context;
             _repository = repository;
@@ -25,7 +26,7 @@ namespace Presentation.Controllers
         // GET: Trains
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Trains.ToListAsync());
+            return View(_repository.GetAll());
         }
 
         // GET: Trains/Details/5

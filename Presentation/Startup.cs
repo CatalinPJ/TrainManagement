@@ -9,6 +9,7 @@ using Presentation.Models;
 using Presentation.Services;
 using Data.Domain.Interfaces;
 using Bussiness;
+using Data.Domain.Entities;
 using Data.Persistance;
 
 namespace Presentation
@@ -33,7 +34,7 @@ namespace Presentation
             services.AddTransient<ITrainRepository, TrainRepository>();
             services.AddTransient<IRouteRepository, RouteRepository>();
 //            services.AddTransient(typeof(IDatabaseContextGeneric<>), typeof(DatabaseContextGeneric<>));
-            services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
+            services.AddTransient(typeof(IRepository<>), typeof(GenericRepository<>));
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -50,6 +51,7 @@ namespace Presentation
             services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddMvc();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
