@@ -1,0 +1,51 @@
+﻿@model List<string>
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+@ViewBag.Total
+@ViewBag.Origin
+@ViewBag.Destination
+
+
+<h4>Ticket</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Arrival
+            </th>
+            <th>
+                Departure
+            </th>
+            <th>
+                Station
+            </th>
+        </tr>
+    </thead>
+<tbody>
+    @foreach (var train in Model)
+    {
+            <tr>
+                <td>
+                   @train
+                </td>
+            </tr>
+    }
+    </tbody>
+    </table>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

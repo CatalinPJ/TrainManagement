@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Bussiness;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Data.Domain.Entities;
+using Data.Domain.Interfaces;
 using Data.Persistance;
 
 namespace Presentation.Controllers
@@ -13,33 +13,34 @@ namespace Presentation.Controllers
     public class TrainsController : Controller
     {
         private readonly DatabaseContext _context;
+        private readonly IRepository<Train> _repository;
 
-        public TrainsController(DatabaseContext context)
+        public TrainsController(DatabaseContext context, IRepository<Train> repository)
         {
             _context = context;
+            _repository = repository;
         }
 
         // GET: Trains
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Trains.ToListAsync());
+            return View(_repository.GetAll());
         }
 
         // GET: Trains/Details/5
-        public async Task<IActionResult> Details(Guid? id)
+        public async Task<IActionResult> Details(string officialNumber)
         {
-            if (id == null)
+            if (officialNumber == null)
             {
                 return NotFound();
             }
 
             var train = await _context.Trains
-                .SingleOrDefaultAsync(m => m.Id == id);
+                .SingleOrDefaultAsync(m => m.OfficialNumber == officialNumber);
             if (train == null)
             {
                 return NotFound();
             }
-
             return View(train);
         }
 

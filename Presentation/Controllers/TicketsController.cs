@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Data.Domain.Entities;
 using Data.Persistance;
+using Services;
 
 namespace Presentation.Controllers
 {
@@ -41,6 +42,18 @@ namespace Presentation.Controllers
             }
 
             return View(ticket);
+        }
+        
+        public async Task<IActionResult> GetRoute(int originStationCode, int destinationStationCode)
+        {
+            RouteFinder routeFinder = new RouteFinder(_context);
+            List<string> trains = routeFinder.GetTrains(originStationCode, destinationStationCode);
+
+            ViewBag.Total = trains.Count();
+            ViewBag.Origin = originStationCode;
+            ViewBag.Destination = destinationStationCode;
+            return View(trains);
+            //return View(ticket);
         }
 
         // GET: Tickets/Create

@@ -12,7 +12,7 @@ namespace Data.Domain.Entities
 
         public Guid Id { get; set; }
         [ForeignKey("Route")]
-        public Guid RouteId { get; set; }
+        public Guid TrainId { get; set; }
         public string Name { get; set; }
         public int OfficialCode { get; set; } // from CFR
         public int DestinationStationCode { get; set; }
@@ -20,8 +20,8 @@ namespace Data.Domain.Entities
         public string DestinationStationName { get; set; }
         public string OriginStationName { get; set; }
         public int Km { get; set; }
-        public DateTime DepartureTime { get; set; }
-        public DateTime ArrivalTime { get; set; }
+        public long DepartureTime { get; set; }
+        public long ArrivalTime { get; set; }
         public int Standing { get; set; }  // in seconds
     }
 }

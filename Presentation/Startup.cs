@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
@@ -39,11 +35,8 @@ namespace Presentation
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IDatabaseContext, DatabaseContext>();
-            services.AddTransient<ITicketRepository, TicketRepository>();
-            services.AddTransient<IStationRepository, StationRepository>();
-            services.AddTransient<IRouteNodeRepository, RouteNodeRepository>();
-            services.AddTransient<ITrainRepository, TrainRepository>();
-            services.AddTransient<IRouteRepository, RouteRepository>();
+//            services.AddTransient(typeof(IDatabaseContextGeneric<>), typeof(DatabaseContextGeneric<>));
+            services.AddTransient(typeof(IRepository<>), typeof(GenericRepository<>));
 
 
             services.AddDbContext<ApplicationDbContext>(options =>
@@ -72,6 +65,7 @@ namespace Presentation
             services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddMvc();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

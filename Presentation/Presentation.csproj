@@ -30,6 +30,7 @@
     <ProjectReference Include="..\Bussiness\Bussiness.csproj" />
     <ProjectReference Include="..\Data.Entities\Data.Domain.csproj" />
     <ProjectReference Include="..\Data.Interfaces\Data.Persistance.csproj" />
+    <ProjectReference Include="..\Services\Services.csproj" />
   </ItemGroup>
 
 </Project>

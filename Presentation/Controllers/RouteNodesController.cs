@@ -22,7 +22,8 @@ namespace Presentation.Controllers
         // GET: RouteNodes
         public async Task<IActionResult> Index()
         {
-            return View(await _context.RouteNodes.ToListAsync());
+            return View(await _context.Set<RouteNode>().ToListAsync());
+//            return View(await _context.RouteNodes.ToListAsync());
         }
 
         // GET: RouteNodes/Details/5
