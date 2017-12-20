@@ -29,9 +29,11 @@ namespace Presentation
             services.AddTransient<IDatabaseContext, DatabaseContext>();
             services.AddTransient<ITicketRepository, TicketRepository>();
             services.AddTransient<IStationRepository, StationRepository>();
-            services.AddTransient<IRouteNodeRepository, RouteNodeRepository>();
+//            services.AddTransient<IRouteNodeRepository, RouteNodeRepository>();
             services.AddTransient<ITrainRepository, TrainRepository>();
             services.AddTransient<IRouteRepository, RouteRepository>();
+//            services.AddTransient(typeof(IDatabaseContextGeneric<>), typeof(DatabaseContextGeneric<>));
+            services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
