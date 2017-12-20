@@ -22,6 +22,8 @@ namespace Data.Domain.Entities
         public int Weight { get; set; }
         public int OriginStationCode { get; set; }
         public int DestinationStationCode { get; set; }
+        public string OriginStationName { get; set; }
+        public string DestinationStationName { get; set; }
         public List<RouteNode> RouteNodes { get; set; }
     }
 }

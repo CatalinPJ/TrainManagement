@@ -1,5 +1,6 @@
 ﻿using Data.Domain.Entities;
 using Data.Persistance;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -57,8 +58,9 @@ namespace Services
         }*/
         public List<Train> GetTrains(int originCode, int destinationCode)
         {
-            List<Train> all_trains = _context.Trains.ToList();
+            List<Train> all_trains = _context.Trains.Include("RouteNodes").ToList();
             List<Train> trains = new List<Train>();
+            trains.Add(all_trains.FirstOrDefault(o => o.OfficialNumber == "8444"));
             /*List<Route> routes = _context.Routes.ToList();
             List<RouteNode> routeNodes = _context.RouteNodes.ToList();
             foreach (var item in routes)

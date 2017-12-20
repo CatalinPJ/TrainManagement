@@ -49,7 +49,7 @@ namespace Presentation.Controllers
             RouteFinder routeFinder = new RouteFinder(_context);
             List<Train> trains = routeFinder.GetTrains(originStationCode, destinationStationCode);
 
-            
+            ViewBag.Total = trains[0].RouteNodes.Count;
             return View(trains);
             //return View(ticket);
         }

@@ -3,6 +3,7 @@ using System.IO;
 using System.Xml;
 using Data.Domain.Entities;
 using System;
+using System.Linq;
 
 namespace Data.Domain.Entities
 {
@@ -91,7 +92,11 @@ namespace Data.Domain.Entities
                     currentTrain.RouteNodes.Add(currentRouteNode);
 
                 } while (trainReader.ReadToNextSibling("ElementTrasa"));
-
+                currentTrain.RouteNodes = currentTrain.RouteNodes.OrderBy(o => o.ArrivalTime).ToList();
+                currentTrain.OriginStationCode = currentTrain.RouteNodes[0].OriginStationCode;
+                currentTrain.DestinationStationCode = currentTrain.RouteNodes[currentTrain.RouteNodes.Count - 1].DestinationStationCode;
+                currentTrain.OriginStationName = currentTrain.RouteNodes[0].OriginStationName;
+                currentTrain.DestinationStationName = currentTrain.RouteNodes[currentTrain.RouteNodes.Count - 1].DestinationStationName;
                 trains.Add(currentTrain);
             }
             xmlStream.Close();
