@@ -10,16 +10,15 @@ namespace _Presentation.Controllers
     public class DbPopulateController : Controller
     {
         private DatabaseContext databaseContext;
-        
+        GenericRepository<Train> trainsRepository;
+        GenericRepository<Station> stationRepository;
         DbPopulate dbPopulate;
+        
         public DbPopulateController(DatabaseContext _databaseContext)
         {
             databaseContext = _databaseContext;
-            /*trainReapository = new TrainRepository(databaseContext);
-            ticketRepository = new TicketRepository(databaseContext);
-            stationRepository = new StationRepository(databaseContext);
-            routeNodeRepository = new RouteNodeRepository(databaseContext);
-            */
+            trainsRepository = new GenericRepository<Train>(databaseContext);
+            stationRepository = new GenericRepository<Station>(databaseContext);
             dbPopulate = new Data.Domain.Entities.DbPopulate();
 
         }
@@ -38,7 +37,7 @@ namespace _Presentation.Controllers
             List<Train> trains = dbPopulate.GetTrains();
             foreach (var train in trains)
             {
-                //trainReapository.CreateTrain(train);
+                trainsRepository.Create(train);
             }
             return new EmptyResult();
         }
@@ -49,7 +48,7 @@ namespace _Presentation.Controllers
             List<Station> stations = dbPopulate.GetStations();
             foreach (var station in stations)
             {
-                //stationRepository.CreateStation(station);
+                stationRepository.Create(station);
             }
             return new EmptyResult();
         }
