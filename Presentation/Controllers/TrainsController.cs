@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Bussiness;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -13,10 +14,12 @@ namespace Presentation.Controllers
     public class TrainsController : Controller
     {
         private readonly DatabaseContext _context;
+        private readonly GenericRepository<Train> _repository;
 
-        public TrainsController(DatabaseContext context)
+        public TrainsController(DatabaseContext context, GenericRepository<Train> repository)
         {
             _context = context;
+            _repository = repository;
         }
 
         // GET: Trains
