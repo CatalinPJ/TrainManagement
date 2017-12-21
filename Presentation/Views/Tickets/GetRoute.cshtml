@@ -4,10 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
-@ViewBag.Total
-@ViewBag.Origin
-@ViewBag.Destination
+<h2>GetRoute</h2>
 
 
 <h4>Ticket</h4>
@@ -26,20 +23,33 @@
             <th>
                 To
             </th>
+            <th>
+                Departure
+            </th>
+            <th>
+                Arrival
+            </th>
         </tr>
     </thead>
 <tbody>
     @foreach (var train in Model)
     {
             <tr>
+                
                 <td>
-                   @train.OfficialNumber
+                   <a asp-area="" asp-controller="Trains" asp-action="Details" asp-route-officialNumber=@train.OfficialNumber>@(train.Category + train.OfficialNumber)</a>
                 </td>
                 <td>
                     @train.OriginStationName
                 </td>
                 <td>
                     @train.DestinationStationName
+                </td>
+                <td>
+                    @String.Format(new DateTime(TimeSpan.FromSeconds(train.DepartureTime).Ticks).ToString("HH:mm"))
+                </td>
+                <td>
+                    @String.Format(new DateTime(TimeSpan.FromSeconds(train.ArrivalTime).Ticks).ToString("HH:mm"))
                 </td>
             </tr>
     }

@@ -56,7 +56,7 @@ namespace Data.Domain.Entities
                 trainReader.MoveToContent();
                 trainReader.ReadToDescendant("ElementTrasa");
                 int counter = 0;
-                int OraS = -1;
+                int OraS = 0;
                 do
                 {
                     RouteNode currentRouteNode = new RouteNode();
@@ -82,7 +82,7 @@ namespace Data.Domain.Entities
 
                     trainReader.MoveToAttribute("Km");
                     currentRouteNode.Km = int.Parse(trainReader.Value);
-                    currentRouteNode.OfficialCode = counter++;
+                    //currentRouteNode.OfficialCode = counter++;
                     currentRouteNode.TrainId = currentTrain.Id;
 
                     trainReader.MoveToAttribute("StationareSecunde");
@@ -97,6 +97,8 @@ namespace Data.Domain.Entities
                 currentTrain.DestinationStationCode = currentTrain.RouteNodes[currentTrain.RouteNodes.Count - 1].DestinationStationCode;
                 currentTrain.OriginStationName = currentTrain.RouteNodes[0].OriginStationName;
                 currentTrain.DestinationStationName = currentTrain.RouteNodes[currentTrain.RouteNodes.Count - 1].DestinationStationName;
+                currentTrain.DepartureTime = currentTrain.RouteNodes[0].DepartureTime;
+                currentTrain.ArrivalTime = currentTrain.RouteNodes[currentTrain.RouteNodes.Count - 1].ArrivalTime;
                 trains.Add(currentTrain);
             }
             xmlStream.Close();

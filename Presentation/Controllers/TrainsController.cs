@@ -35,12 +35,13 @@ namespace Presentation.Controllers
                 return NotFound();
             }
 
-            var train = await _context.Trains
+            var train = await _context.Trains.Include("RouteNodes")
                 .SingleOrDefaultAsync(m => m.OfficialNumber == officialNumber);
             if (train == null)
             {
                 return NotFound();
             }
+            train.RouteNodes = train.RouteNodes.OrderBy(o => o.ArrivalTime).ToList();
             return View(train);
         }
 

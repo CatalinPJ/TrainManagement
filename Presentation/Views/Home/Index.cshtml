@@ -7,7 +7,7 @@
         <div class="panel panel-primary">
             <div class="panel-heading">SEARCH ROUTE</div>
             <div class="panel-body small">
-                <form>
+                <form action="@Url.Action("GetRoute", "Tickets")">
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group form-group-sm">
@@ -18,19 +18,19 @@
                         <div class="col-sm-12">
                             <div class="form-group form-group-sm">
                                 <label class="control-label" for="hour">Leaving after</label>
-                                <input id="hour" name="hour" type="time" class="form-control input-sm" value="08:00" />
+                                <input id="leavingAfter" name="leavingAfter" type="time" class="form-control input-sm" value="08:00" />
                             </div>
                         </div>
                         <div class="col-sm-12">
                             <div class="form-group form-group-sm">
                                 <label class="control-label" for="leaving">Leaving from</label>
-                                <input id="leaving" name="leaving" type="text" class="form-control input-sm" />
+                                <input id="originStationName" name="originStationName" type="text" class="form-control input-sm" />
                             </div>
                         </div>
                         <div class="col-sm-12">
                             <div class="form-group form-group-sm">
                                 <label class="control-label" for="arriving">Arriving to</label>
-                                <input id="arriving" name="arriving" type="text" class="form-control input-sm" />
+                                <input id="destinationStationName" name="destinationStationName" type="text" class="form-control input-sm" />
                             </div>
                         </div>
                         <div class="col-sm-12">
@@ -39,7 +39,8 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group form-group-sm">
-                                <button id="singlebutton" name="singlebutton" class="btn btn-sm">Search train</button>
+                                <!--<a asp-area="" asp-controller="Ticket" asp-action="GetRoute" asp-route-originStationName="">-->
+                                <button id="singlebutton" name="singlebutton" class="btn">Search train</button>
                             </div>
                         </div>
                         <div class="col-sm-6">

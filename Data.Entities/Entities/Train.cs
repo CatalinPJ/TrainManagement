@@ -24,6 +24,8 @@ namespace Data.Domain.Entities
         public int DestinationStationCode { get; set; }
         public string OriginStationName { get; set; }
         public string DestinationStationName { get; set; }
+        public long DepartureTime { get; set; }
+        public long ArrivalTime { get; set; }
         public List<RouteNode> RouteNodes { get; set; }
     }
 }

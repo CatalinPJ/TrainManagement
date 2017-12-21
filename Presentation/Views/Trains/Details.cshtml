@@ -60,6 +60,42 @@
             @Html.DisplayFor(model => model.Weight)
         </dd>
     </dl>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Station</th>
+                <th>Arrive</th>
+                <th>Standing</th>
+                <th>Departure</th>
+            </tr>
+        </thead>
+            <tbody>
+                @foreach (var routeNode in Model.RouteNodes)
+                {
+                    <tr>
+                    <td>
+                        @routeNode.OriginStationName
+                    </td>
+
+                        <td>
+                            @if (routeNode.ArrivalTime != 0)
+                            { 
+                                 @String.Format(new DateTime(TimeSpan.FromSeconds(routeNode.ArrivalTime).Ticks).ToString("HH:mm"));
+                            }
+                        </td>
+                        <td>
+                        
+                            @((int)(routeNode.Standing/60.0 + 0.5))
+                        
+                        </td>
+                        <td>
+                            @String.Format(new DateTime(TimeSpan.FromSeconds(routeNode.DepartureTime).Ticks).ToString("HH:mm"))
+                        </td>
+                        
+                    </tr>
+                }
+            </tbody>
+     </table>
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |

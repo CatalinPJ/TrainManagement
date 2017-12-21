@@ -44,11 +44,10 @@ namespace Presentation.Controllers
             return View(ticket);
         }
         
-        public async Task<IActionResult> GetRoute(int originStationCode, int destinationStationCode)
+        public async Task<IActionResult> GetRoute(string originStationName, string destinationStationName, TimeSpan leavingAfter)
         {
             RouteFinder routeFinder = new RouteFinder(_context);
-            List<Train> trains = routeFinder.GetTrains(originStationCode, destinationStationCode);
-            ViewBag.Total = trains.Count;
+            List<Train> trains = routeFinder.GetTrains(originStationName, destinationStationName, leavingAfter);
             return View(trains);
             //return View(ticket);
         }

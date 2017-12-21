@@ -1,6 +1,7 @@
 ﻿using Data.Domain.Entities;
 using Data.Persistance;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -56,14 +57,15 @@ namespace Services
             }
             return nodes;
         }*/
-        public List<Train> GetTrains(int originCode, int destinationCode)
+        public List<Train> GetTrains(string originName, string destinationName, TimeSpan leavingAfter)
         {
             var allTrainsToDestination = _context.Trains
                 .Join(_context.RouteNodes,
                     train => train.Id,
                     node => node.TrainId,
                     (train, node) => new { Train = train, RouteNode = node })
-                .Where(trainAndNode => trainAndNode.RouteNode.DestinationStationCode == destinationCode)
+                .Where(trainAndNode => trainAndNode.RouteNode.DestinationStationName == destinationName).
+                Where(train => train.Train.DepartureTime > leavingAfter.TotalSeconds)
                 .Select(trainAndNode => trainAndNode.Train.Id).ToList();
 
             var trainsFromOriginToDestination = _context.Trains
@@ -71,7 +73,8 @@ namespace Services
                     train => train.Id,
                     node => node.TrainId,
                     (train, node) => new { Train = train, RouteNode = node })
-                .Where(trainAndNode => trainAndNode.RouteNode.OriginStationCode == originCode)
+                .Where(trainAndNode => trainAndNode.RouteNode.OriginStationName == originName).
+                Where(train => train.Train.DepartureTime > leavingAfter.TotalSeconds)
                 .Where(trainAndNode => allTrainsToDestination.Contains(trainAndNode.Train.Id)).ToList();
 
             List<Train> result = new List<Train>();
