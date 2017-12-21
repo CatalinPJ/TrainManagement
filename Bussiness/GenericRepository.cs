@@ -10,9 +10,9 @@ namespace Bussiness
     public class GenericRepository<T> : IRepository<T> where T: class
     {
 
-        private readonly DatabaseContext _databaseContext;
+        private readonly IDatabaseContext _databaseContext;
 
-        public GenericRepository(DatabaseContext databaseContext)
+        public GenericRepository(IDatabaseContext databaseContext)
         {
             _databaseContext = databaseContext;
         }
@@ -44,7 +44,7 @@ namespace Bussiness
 
         public T GetById(Guid entityId)
         {
-            throw new NotImplementedException();
+            return _databaseContext.Set<T>().Find(entityId);
         }
     }
 }
