@@ -61,3 +61,12 @@ C:\Users\Stefan\Documents\TrainManagement\Data.Entities\obj\Debug\netstandard2.0
 C:\Users\Stefan\Documents\TrainManagement\Data.Entities\obj\Debug\netstandard2.0\Data.Domain.dll
 C:\Users\Stefan\Documents\TrainManagement\Data.Entities\obj\Debug\netstandard2.0\Data.Domain.pdb
 C:\Users\jolde\Desktop\TrainManagement\Data.Entities\obj\Debug\netstandard2.0\Data.Domain.csprojResolveAssemblyReference.cache
+D:\Workspace\TM\TrainManagement\Data.Entities\bin\Debug\netstandard2.0\Data.Domain.deps.json
+D:\Workspace\TM\TrainManagement\Data.Entities\bin\Debug\netstandard2.0\Data.Domain.dll
+D:\Workspace\TM\TrainManagement\Data.Entities\bin\Debug\netstandard2.0\Data.Domain.pdb
+D:\Workspace\TM\TrainManagement\Data.Entities\obj\Debug\netstandard2.0\Data.Domain.csprojResolveAssemblyReference.cache
+D:\Workspace\TM\TrainManagement\Data.Entities\obj\Debug\netstandard2.0\Data.Domain.csproj.CoreCompileInputs.cache
+D:\Workspace\TM\TrainManagement\Data.Entities\obj\Debug\netstandard2.0\Data.Domain.AssemblyInfoInputs.cache
+D:\Workspace\TM\TrainManagement\Data.Entities\obj\Debug\netstandard2.0\Data.Domain.AssemblyInfo.cs
+D:\Workspace\TM\TrainManagement\Data.Entities\obj\Debug\netstandard2.0\Data.Domain.dll
+D:\Workspace\TM\TrainManagement\Data.Entities\obj\Debug\netstandard2.0\Data.Domain.pdb
