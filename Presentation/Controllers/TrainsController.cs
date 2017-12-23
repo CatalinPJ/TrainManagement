@@ -41,7 +41,7 @@ namespace Presentation.Controllers
             {
                 return NotFound();
             }
-            train.RouteNodes = train.RouteNodes.OrderBy(o => o.ArrivalTime).ToList();
+            train.RouteNodes = train.RouteNodes.OrderBy(o => o.OfficialCode).ToList();
             return View(train);
         }
 

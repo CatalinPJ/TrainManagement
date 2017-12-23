@@ -4,30 +4,69 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>GetRoute</h2>
+<style>
+    #map {
+        height: 100%;
+        width: 100%;
+    }
+</style>
 
 
-<h4>Ticket</h4>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="map_modal_title">Modal Header</h4>
+                <button class="btn btn-info btn-md" id="display_map">Display</button>
+            </div>
+            <div class="modal-body" style="height: 500px;">
+
+                <div id="floating-panel">
+                    <input type="text" value=@ViewBag.originStationName id="start" hidden/>
+                    <input type="text" value=@ViewBag.destinationStationName id="end" hidden/>
+                </div>
+                <div id="map">Pff</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
 <table class="table">
     <thead>
-        <tr>
+        <tr> 
             <th>
-                No
+                Buy
             </th>
             <th>
-                From
+                Train No
             </th>
             <th>
-                To
+                Departure station
             </th>
             <th>
-                Departure
+                Arrival station
             </th>
             <th>
-                Arrival
+                Departure time
+            </th>
+            <th>
+                Arrival time
+            </th>
+            <th>
+                Duration
+            </th>
+            <th>
+                Distance (km)
+            </th>
+            <th>
+                Route details
             </th>
         </tr>
     </thead>
@@ -36,20 +75,38 @@
     {
             <tr>
                 
+                <td><a href="#">?</a></td>
                 <td>
                    <a asp-area="" asp-controller="Trains" asp-action="Details" asp-route-officialNumber=@train.OfficialNumber>@(train.Category + train.OfficialNumber)</a>
                 </td>
                 <td>
-                    @train.OriginStationName
+                    @ViewBag.originStationName
                 </td>
                 <td>
-                    @train.DestinationStationName
+                    @ViewBag.destinationStationName
                 </td>
                 <td>
                     @String.Format(new DateTime(TimeSpan.FromSeconds(train.DepartureTime).Ticks).ToString("HH:mm"))
                 </td>
                 <td>
                     @String.Format(new DateTime(TimeSpan.FromSeconds(train.ArrivalTime).Ticks).ToString("HH:mm"))
+                </td>
+                <td>
+                    @if (train.ArrivalTime - train.DepartureTime > 0)
+                    {
+                            @String.Format(new DateTime(TimeSpan.FromSeconds(train.ArrivalTime - train.DepartureTime).Ticks).ToString("HH:mm"))
+                    }
+                    else
+                    {
+                        int middle_night_seconds = 86400;
+                            @String.Format(new DateTime(TimeSpan.FromSeconds(train.ArrivalTime + middle_night_seconds - train.DepartureTime).Ticks).ToString("HH:mm"))
+                    }
+                </td>
+                <td>
+                    ?
+                </td>
+                <td>
+                    <img  data-toggle="modal" data-target="#myModal" src="https://vignette.wikia.nocookie.net/logopedia/images/e/e1/Googlemapslogo2014.png/revision/latest?cb=20150309221525" height="30" width="30"/>
                 </td>
             </tr>
     }
@@ -58,10 +115,45 @@
     </div>
 </div>
 
-<div>
+<!--div>
     <a asp-action="Index">Back to List</a>
-</div>
+</div>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+      document.getElementById("map_modal_title").innerHTML = document.getElementById("start").value + ' - ' + document.getElementById("end").value;
+      function initMap() {
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer;
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: {lat: 45.16667 , lng: 25.6 }
+        });
+        directionsDisplay.setMap(map);
+        document.getElementById("display_map").onclick = function () {
+            calculateAndDisplayRoute(directionsService, directionsDisplay);
+        }
+
+      }
+
+      function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+        directionsService.route({
+          origin: document.getElementById('start').value,
+          destination: document.getElementById('end').value,
+          travelMode: 'TRANSIT'
+        }, function(response, status) {
+          if (status === 'OK') {
+              directionsDisplay.setDirections(response);
+          } else {
+              window.alert('Directions request failed due to ' + status);
+          }
+        });
+      }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAVXeZ-B_GK8FV8vzhGjeFsdSfcIKtnIc&callback=initMap">
+</script>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{//await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

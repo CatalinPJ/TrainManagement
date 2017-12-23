@@ -784,7 +784,7 @@
       ]
     },
     "Remotion.Linq/2.1.1": {
-      "sha512": "pH37cgA3ggoDJkewGHVeEyLSmvfS4tK8gKQEcIeexnJLRHT6SDGBwKASnRgV1xSDNWzjdIgrpfRpWT1QFdlhsQ==",
+      "sha512": "IJn0BqkvwEDpP+2qjvci7n4/a9f7DhKESLWb2/uG4xQh3rTkGTBUz69bI4IivCoKkTFAqjXxYDZw2K/npohjsw==",
       "type": "package",
       "path": "remotion.linq/2.1.1",
       "files": [
@@ -1468,7 +1468,7 @@
       ]
     },
     "System.Linq.Queryable/4.0.1": {
-      "sha512": "lEsI6HgpdAfYb+WLn4ieWwtQG1ffyaM1Tx0rYR20AgGYXcCezO72PTkjxQUVMsQZAZ068/5ZZk6s+SFyIl4mfg==",
+      "sha512": "Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
       "type": "package",
       "path": "system.linq.queryable/4.0.1",
       "files": [
@@ -2379,7 +2379,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Fox\\.nuget\\packages\\": {},
+    "C:\\Users\\jolde\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -2388,17 +2388,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\Workspace\\TM\\TrainManagement\\Data.Entities\\Data.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\jolde\\Desktop\\TrainManagement\\Data.Entities\\Data.Domain.csproj",
       "projectName": "Data.Domain",
-      "projectPath": "D:\\Workspace\\TM\\TrainManagement\\Data.Entities\\Data.Domain.csproj",
-      "packagesPath": "C:\\Users\\Fox\\.nuget\\packages\\",
-      "outputPath": "D:\\Workspace\\TM\\TrainManagement\\Data.Entities\\obj\\",
+      "projectPath": "C:\\Users\\jolde\\Desktop\\TrainManagement\\Data.Entities\\Data.Domain.csproj",
+      "packagesPath": "C:\\Users\\jolde\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jolde\\Desktop\\TrainManagement\\Data.Entities\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Fox\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jolde\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

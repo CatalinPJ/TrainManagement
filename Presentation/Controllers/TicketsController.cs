@@ -48,6 +48,8 @@ namespace Presentation.Controllers
         {
             RouteFinder routeFinder = new RouteFinder(_context);
             List<Train> trains = routeFinder.GetTrains(originStationName, destinationStationName, leavingAfter);
+            ViewBag.originStationName = originStationName;
+            ViewBag.destinationStationName = destinationStationName;
             return View(trains);
             //return View(ticket);
         }

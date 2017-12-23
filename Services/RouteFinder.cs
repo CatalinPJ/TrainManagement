@@ -58,17 +58,17 @@ namespace Services
             return nodes;
         }*/
         public List<Train> GetTrains(string originName, string destinationName, TimeSpan leavingAfter)
-        {
-            var allTrainsToDestination = _context.Trains
+        { 
+            var allTrainsToDestination = _context.Trains.Include("RouteNodes")
                 .Join(_context.RouteNodes,
                     train => train.Id,
                     node => node.TrainId,
                     (train, node) => new { Train = train, RouteNode = node })
-                .Where(trainAndNode => trainAndNode.RouteNode.DestinationStationName == destinationName).
-                Where(train => train.Train.DepartureTime > leavingAfter.TotalSeconds)
+                .Where(trainAndNode => trainAndNode.RouteNode.DestinationStationName == destinationName)
+                .Where(train => train.Train.DepartureTime > leavingAfter.TotalSeconds)
                 .Select(trainAndNode => trainAndNode.Train.Id).ToList();
 
-            var trainsFromOriginToDestination = _context.Trains
+            var trainsFromOriginToDestination = _context.Trains.Include("RouteNodes")
                 .Join(_context.RouteNodes,
                     train => train.Id,
                     node => node.TrainId,
@@ -81,7 +81,13 @@ namespace Services
             result = trainsFromOriginToDestination.AsEnumerable()
                 .Select(train => train.Train).ToList();
 
-            return result;
+            foreach (Train train in result)
+            {
+                train.RouteNodes = train.RouteNodes.OrderBy(r => r.OfficialCode).ToList();
+                train.DepartureTime = train.RouteNodes.FirstOrDefault(o => o.OriginStationName == originName).DepartureTime;
+                train.ArrivalTime = train.RouteNodes.FirstOrDefault(o => o.OriginStationName == destinationName).ArrivalTime;
+            }
+            return result.Where(o => o.RouteNodes[0].OriginStationName == originName).OrderBy(o => o.DepartureTime).ToList();
         }
     }
 }

@@ -82,7 +82,7 @@ namespace Data.Domain.Entities
 
                     trainReader.MoveToAttribute("Km");
                     currentRouteNode.Km = int.Parse(trainReader.Value);
-                    //currentRouteNode.OfficialCode = counter++;
+                    currentRouteNode.OfficialCode = counter++;
                     currentRouteNode.TrainId = currentTrain.Id;
 
                     trainReader.MoveToAttribute("StationareSecunde");

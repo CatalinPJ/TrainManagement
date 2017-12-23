@@ -67,6 +67,7 @@
                 <th>Arrive</th>
                 <th>Standing</th>
                 <th>Departure</th>
+                <th>OfficialCode</th>
             </tr>
         </thead>
             <tbody>
@@ -90,6 +91,9 @@
                         </td>
                         <td>
                             @String.Format(new DateTime(TimeSpan.FromSeconds(routeNode.DepartureTime).Ticks).ToString("HH:mm"))
+                        </td>
+                        <td>
+                            @routeNode.OfficialCode
                         </td>
                         
                     </tr>
