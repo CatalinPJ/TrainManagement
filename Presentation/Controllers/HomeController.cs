@@ -5,11 +5,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Presentation.Models;
+using Data.Domain.Entities;
+using Data.Domain.Interfaces;
 
 namespace Presentation.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IRepository<Station> _repository;
+
+        public HomeController(IRepository<Station> repository)
+        {
+            _repository = repository;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -33,5 +42,15 @@ namespace Presentation.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public JsonResult GetStations(string prefix) {
+            if (_repository != null)
+            {
+                List<Station> stations = _repository.GetAll().Where(o=>o.Name.StartsWith(prefix)).ToList();
+                return Json(stations);
+            }
+            return null;
+        }
+
     }
 }

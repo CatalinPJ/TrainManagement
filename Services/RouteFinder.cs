@@ -87,7 +87,7 @@ namespace Services
                 train.DepartureTime = train.RouteNodes.FirstOrDefault(o => o.OriginStationName == originName).DepartureTime;
                 train.ArrivalTime = train.RouteNodes.FirstOrDefault(o => o.OriginStationName == destinationName).ArrivalTime;
             }
-            return result.Where(o => o.RouteNodes[0].OriginStationName == originName).OrderBy(o => o.DepartureTime).ToList();
+            return result.Where(o => o.RouteNodes.FirstOrDefault(r=>r.OriginStationName == originName).OfficialCode < o.RouteNodes.FirstOrDefault(r => r.DestinationStationName == destinationName).OfficialCode).OrderBy(o => o.DepartureTime).ToList();
         }
     }
 }
