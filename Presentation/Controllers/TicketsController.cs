@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using Data.Domain.Entities;
 using Data.Persistance;
 using Services;
+using AutoMapper;
+using Presentation.DTOs;
 
 namespace Presentation.Controllers
 {
@@ -44,37 +46,78 @@ namespace Presentation.Controllers
             return View(ticket);
         }
         
-        public async Task<IActionResult> GetRoute(string originStationName, string destinationStationName, TimeSpan leavingAfter)
+        public async Task<IActionResult> GetRoute(string originStationName, string destinationStationName, TimeSpan leavingAfter, string primaryStations)
         {
             RouteFinder routeFinder = new RouteFinder(_context);
             List<Train> trains = routeFinder.GetTrains(originStationName, destinationStationName, leavingAfter);
             ViewBag.originStationName = originStationName;
             ViewBag.destinationStationName = destinationStationName;
+            ViewBag.primaryStations = primaryStations;
             return View(trains);
             //return View(ticket);
         }
 
-        // GET: Tickets/Create
-        public IActionResult Create()
+        public IActionResult Create(Guid trainId, string from, string to)
         {
-            return View();
+            Train train = _context.Trains.Include("RouteNodes")
+             .FirstOrDefault(m => m.Id == trainId);
+            var source = new TicketDTO()
+            {
+                OriginStationName = from,
+                DestinationStationName = to,
+                DepartureTime = train.RouteNodes.FirstOrDefault(o=>o.OriginStationName == from).DepartureTime,
+                ArrivalTime = train.RouteNodes.FirstOrDefault(o => o.OriginStationName == to).ArrivalTime,
+                TrainCategory = train.Category,
+                TrainNumber = train.OfficialNumber,
+                TrainId = train.Id,
+                DepartureDate = DateTime.Now
+            };
+            ViewBag.from = from;
+            ViewBag.to = to;
+            return View(source);
         }
-
         // POST: Tickets/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TrainId,UserId,OriginStationId,DestinationStationId,DepartureTime,ArrivalTime,Duration,Km,Type,Pet,Bike,Car,Seat,Price")] Ticket ticket)
+        public async Task<IActionResult> Create(TicketDTO ticketDTO, string to, string from, Guid trainId)
         {
-            if (ModelState.IsValid)
+            Train train = _context.Trains.Include("RouteNodes")
+             .FirstOrDefault(m => m.Id == trainId);
+            var source = new TicketDTO()
             {
-                ticket.Id = Guid.NewGuid();
-                _context.Add(ticket);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(ticket);
+                OriginStationName = from,
+                DestinationStationName = to,
+                DepartureTime = train.RouteNodes.FirstOrDefault(o => o.OriginStationName == from).DepartureTime,
+                ArrivalTime = train.RouteNodes.FirstOrDefault(o => o.OriginStationName == to).ArrivalTime,
+                TrainCategory = train.Category,
+                TrainNumber = train.OfficialNumber,
+                TrainId = train.Id,
+                DepartureDate = DateTime.Now
+            };
+            source.Adults = ticketDTO.Adults;
+            source.Students = ticketDTO.Students;
+            source.Children = ticketDTO.Children;
+            source.Pet = ticketDTO.Pet;
+            source.Class = ticketDTO.Class;
+            var config = new MapperConfiguration(cfg => {
+                cfg.CreateMap<TicketDTO, Ticket>();
+            });
+            IMapper mapper = config.CreateMapper();
+            var ticket = mapper.Map<TicketDTO, Ticket>(source);
+            PriceComputer priceComputer = new PriceComputer();
+            int from_id = train.RouteNodes.FirstOrDefault(o => o.OriginStationName == from).OfficialCode;
+            int to_id = train.RouteNodes.FirstOrDefault(o => o.OriginStationName == to).OfficialCode;
+            List<RouteNode> nodes = train.RouteNodes.Where(o => o.OfficialCode >= from_id && o.OfficialCode <= to_id).ToList();
+            int distance = 0;
+            foreach (var node in nodes)
+                distance += node.Km / 1000;
+            ticket.Km = distance;
+            ticket.Price = (int)priceComputer.GetPrice(ticket);
+            _context.Add(ticket);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Tickets/Edit/5

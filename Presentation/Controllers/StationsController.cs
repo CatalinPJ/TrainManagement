@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Data.Domain.Entities;
 using Data.Persistance;
+using Presentation.DTOs;
+using AutoMapper;
 
 namespace Presentation.Controllers
 {
@@ -97,16 +99,16 @@ namespace Presentation.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,OfficialCode")] Station station)
+        public async Task<IActionResult> Create(StationDTO stationDTO)
         {
-            if (ModelState.IsValid)
-            {
-                station.Id = Guid.NewGuid();
-                _context.Add(station);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(station);
+            var config = new MapperConfiguration(cfg => {
+                cfg.CreateMap<StationDTO, Station>();
+            });
+            IMapper mapper = config.CreateMapper();
+            var station = mapper.Map<StationDTO, Station>(stationDTO);
+            _context.Add(station);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Stations/Edit/5

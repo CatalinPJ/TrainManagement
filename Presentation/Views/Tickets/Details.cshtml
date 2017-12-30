@@ -12,58 +12,66 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.TrainId)
+            @Html.DisplayNameFor(model => model.DepartureDate)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.TrainId)
+           @Model.DepartureDate.ToShortDateString()
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.UserId)
+            From
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.UserId)
+            @Html.DisplayFor(model => model.OriginStationName)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.OriginStationId)
+            To
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.OriginStationId)
+            @Html.DisplayFor(model => model.DestinationStationName)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.DestinationStationId)
+            Train
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.DestinationStationId)
+           @(Model.TrainCategory + Model.TrainNumber)
+        </dd>
+        <dt>
+            Class
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Class)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.DepartureTime)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.DepartureTime)
+            @String.Format(new DateTime(TimeSpan.FromSeconds(Model.DepartureTime).Ticks).ToString("HH:mm"))
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.ArrivalTime)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.ArrivalTime)
+            @String.Format(new DateTime(TimeSpan.FromSeconds(Model.ArrivalTime).Ticks).ToString("HH:mm"))
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Duration)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Duration)
+            @if (@Model.ArrivalTime - @Model.DepartureTime > 0)
+            {
+                @String.Format(new DateTime(TimeSpan.FromSeconds(@Model.ArrivalTime - @Model.DepartureTime).Ticks).ToString("HH:mm"))
+            }
+            else
+            {
+                int middle_night_seconds = 86400;
+                @String.Format(new DateTime(TimeSpan.FromSeconds(@Model.ArrivalTime + middle_night_seconds - @Model.DepartureTime).Ticks).ToString("HH:mm"))
+            }
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Km)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Km)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Type)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Type)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Pet)
@@ -90,14 +98,29 @@
             @Html.DisplayFor(model => model.Seat)
         </dd>
         <dt>
+            @Html.DisplayNameFor(model => model.Adults)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Adults)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Children)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Children)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Students)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Students)
+        </dd>
+        <hr />
+        <dt>
             @Html.DisplayNameFor(model => model.Price)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Price)
         </dd>
     </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
 </div>

@@ -28,7 +28,7 @@ namespace Presentation.Controllers
         }
 
         // GET: Trains/Details/5
-        public async Task<IActionResult> Details(string officialNumber)
+        public async Task<IActionResult> Details(string officialNumber, string primaryStations)
         {
             if (officialNumber == null)
             {
@@ -41,6 +41,9 @@ namespace Presentation.Controllers
             {
                 return NotFound();
             }
+            ViewBag.primaryStations = primaryStations;
+            if (primaryStations == "on")
+                train.RouteNodes.RemoveAll(o => o.DepartureTime - o.ArrivalTime == 0 && o.OfficialCode!= train.RouteNodes.Count-1);
             train.RouteNodes = train.RouteNodes.OrderBy(o => o.OfficialCode).ToList();
             return View(train);
         }

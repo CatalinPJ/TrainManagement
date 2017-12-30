@@ -75,9 +75,11 @@
     {
             <tr>
                 
-                <td><a href="#">?</a></td>
                 <td>
-                   <a asp-area="" asp-controller="Trains" asp-action="Details" asp-route-officialNumber=@train.OfficialNumber>@(train.Category + train.OfficialNumber)</a>
+                    <a asp-area="" asp-controller="Tickets" asp-action="Create" asp-route-trainId=@train.Id asp-route-from=@ViewBag.originStationName asp-route-to=@ViewBag.destinationStationName>Buy</a>
+                </td>
+                <td>
+                   <a asp-area="" asp-controller="Trains" asp-action="Details" asp-route-primaryStations=@ViewBag.primaryStations asp-route-officialNumber=@train.OfficialNumber>@(train.Category + train.OfficialNumber)</a>
                 </td>
                 <td>
                     @ViewBag.originStationName

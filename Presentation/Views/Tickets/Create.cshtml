@@ -1,97 +1,109 @@
-﻿@model Data.Domain.Entities.Ticket
+﻿@model Presentation.DTOs.TicketDTO
 
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@ViewBag.from;
+@ViewBag.to;
 <h2>Create</h2>
-
 <h4>Ticket</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="TrainId" class="control-label"></label>
-                <input asp-for="TrainId" class="form-control" />
-                <span asp-validation-for="TrainId" class="text-danger"></span>
+        <div class="container">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Number</th>
+                        <th>Origin</th>
+                        <th>Destination</th>
+                        <th>Date</th>
+                        <th>Departure</th>
+                        <th>Arrival</th>
+                        <th>Duration</th>
+                        <th>Distance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@Model.TrainCategory</td>
+                        <td>@Model.TrainNumber</td>
+                        <td>@ViewBag.from</td>
+                        <td>@ViewBag.to</td>
+                        <td>@String.Format(DateTime.Now.ToString("dd-MM-yyyy"))</td>
+                        <td>@String.Format(new DateTime(TimeSpan.FromSeconds(@Model.DepartureTime).Ticks).ToString("HH:mm"))</td>
+                        <td>@String.Format(new DateTime(TimeSpan.FromSeconds(@Model.ArrivalTime).Ticks).ToString("HH:mm"))</td>
+                        <td>
+                            @if (@Model.ArrivalTime - @Model.DepartureTime > 0)
+                            {
+                                @String.Format(new DateTime(TimeSpan.FromSeconds(@Model.ArrivalTime - @Model.DepartureTime).Ticks).ToString("HH:mm"))
+                            }
+                            else
+                            {
+                                int middle_night_seconds = 86400;
+                                @String.Format(new DateTime(TimeSpan.FromSeconds(@Model.ArrivalTime + middle_night_seconds - @Model.DepartureTime).Ticks).ToString("HH:mm"))
+                            }
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="col-md-2">
+                <form asp-action="Create" asp-route-from=@ViewBag.from asp-route-to=@ViewBag.to asp-route-trainId=@Model.TrainId>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="TrainCategory" class="control-label"></label>
+                        <input asp-for="TrainCategory" class="form-control" />
+                        <span asp-validation-for="TrainCategory" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TrainNumber" class="control-label"></label>
+                        <input asp-for="TrainNumber" class="form-control" />
+                        <span asp-validation-for="TrainNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="OriginStationName" class="control-label"></label>
+                        <input asp-for="OriginStationName" class="form-control" />
+                        <span asp-validation-for="OriginStationName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DestinationStationName" class="control-label"></label>
+                        <input asp-for="DestinationStationName" class="form-control" />
+                        <span asp-validation-for="DestinationStationName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Class" class="control-label"></label>
+                        <input asp-for="Class" class="form-control" />
+                        <span asp-validation-for="Class" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Adults" class="control-label"></label>
+                        <input asp-for="Adults" class="form-control" />
+                        <span asp-validation-for="Adults" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Children" class="control-label"></label>
+                        <input asp-for="Children" class="form-control" />
+                        <span asp-validation-for="Children" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Students" class="control-label"></label>
+                        <input asp-for="Students" class="form-control" />
+                        <span asp-validation-for="Students" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Pet" class="control-label"></label>
+                        <input asp-for="Pet" class="form-control" />
+                        <span asp-validation-for="Pet" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="UserId" class="control-label"></label>
-                <input asp-for="UserId" class="form-control" />
-                <span asp-validation-for="UserId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="OriginStationId" class="control-label"></label>
-                <input asp-for="OriginStationId" class="form-control" />
-                <span asp-validation-for="OriginStationId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DestinationStationId" class="control-label"></label>
-                <input asp-for="DestinationStationId" class="form-control" />
-                <span asp-validation-for="DestinationStationId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DepartureTime" class="control-label"></label>
-                <input asp-for="DepartureTime" class="form-control" />
-                <span asp-validation-for="DepartureTime" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ArrivalTime" class="control-label"></label>
-                <input asp-for="ArrivalTime" class="form-control" />
-                <span asp-validation-for="ArrivalTime" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Duration" class="control-label"></label>
-                <input asp-for="Duration" class="form-control" />
-                <span asp-validation-for="Duration" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Km" class="control-label"></label>
-                <input asp-for="Km" class="form-control" />
-                <span asp-validation-for="Km" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Type" class="control-label"></label>
-                <input asp-for="Type" class="form-control" />
-                <span asp-validation-for="Type" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Pet" class="control-label"></label>
-                <input asp-for="Pet" class="form-control" />
-                <span asp-validation-for="Pet" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Bike" class="control-label"></label>
-                <input asp-for="Bike" class="form-control" />
-                <span asp-validation-for="Bike" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Car" class="control-label"></label>
-                <input asp-for="Car" class="form-control" />
-                <span asp-validation-for="Car" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Seat" class="control-label"></label>
-                <input asp-for="Seat" class="form-control" />
-                <span asp-validation-for="Seat" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
-                <input asp-for="Price" class="form-control" />
-                <span asp-validation-for="Price" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
+        </div>
 </div>
 
 @section Scripts {

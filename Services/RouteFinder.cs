@@ -58,13 +58,13 @@ namespace Services
             return nodes;
         }*/
         public List<Train> GetTrains(string originName, string destinationName, TimeSpan leavingAfter)
-        { 
+        {
             var allTrainsToDestination = _context.Trains.Include("RouteNodes")
                 .Join(_context.RouteNodes,
                     train => train.Id,
                     node => node.TrainId,
                     (train, node) => new { Train = train, RouteNode = node })
-                .Where(trainAndNode => trainAndNode.RouteNode.DestinationStationName == destinationName)
+                .Where(trainAndNode => (trainAndNode.RouteNode.DestinationStationName == destinationName))
                 .Where(train => train.Train.DepartureTime > leavingAfter.TotalSeconds)
                 .Select(trainAndNode => trainAndNode.Train.Id).ToList();
 
@@ -87,7 +87,9 @@ namespace Services
                 train.DepartureTime = train.RouteNodes.FirstOrDefault(o => o.OriginStationName == originName).DepartureTime;
                 train.ArrivalTime = train.RouteNodes.FirstOrDefault(o => o.OriginStationName == destinationName).ArrivalTime;
             }
-            return result.Where(o => o.RouteNodes.FirstOrDefault(r=>r.OriginStationName == originName).OfficialCode < o.RouteNodes.FirstOrDefault(r => r.DestinationStationName == destinationName).OfficialCode).OrderBy(o => o.DepartureTime).ToList();
+            return result.Where(o => o.RouteNodes.FirstOrDefault(r => r.OriginStationName == originName).OfficialCode < o.RouteNodes.FirstOrDefault(r => r.DestinationStationName == destinationName).OfficialCode)
+                //.Where(o => o.RouteNodes.FirstOrDefault(r => r.DestinationStationName == destinationName).DepartureTime - o.RouteNodes.FirstOrDefault(r => r.DestinationStationName == destinationName).ArrivalTime > 0)
+                .OrderBy(o => o.DepartureTime).ToList();
         }
     }
 }

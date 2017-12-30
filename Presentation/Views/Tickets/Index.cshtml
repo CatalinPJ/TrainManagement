@@ -14,16 +14,7 @@
     <thead>
         <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.TrainId)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.UserId)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.OriginStationId)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.DestinationStationId)
+                    Train
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.DepartureTime)
@@ -34,18 +25,7 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Duration)
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Km)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Type)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Pet)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Bike)
-                </th>
+                
                 <th>
                     @Html.DisplayNameFor(model => model.Car)
                 </th>
@@ -53,52 +33,50 @@
                     @Html.DisplayNameFor(model => model.Seat)
                 </th>
                 <th>
+                    From
+                </th>
+                <th>
+                    To
+                </th>
+                <th>
                     @Html.DisplayNameFor(model => model.Price)
                 </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.TrainId)
+                @Html.DisplayFor(modelItem => item.TrainCategory)@Html.DisplayFor(modelItem => item.TrainNumber)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UserId)
+                @String.Format(new DateTime(TimeSpan.FromSeconds(item.DepartureTime).Ticks).ToString("HH:mm"))
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.OriginStationId)
+                @String.Format(new DateTime(TimeSpan.FromSeconds(item.ArrivalTime).Ticks).ToString("HH:mm"))
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DestinationStationId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DepartureTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ArrivalTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Duration)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Km)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pet)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Bike)
+                @if (@item.ArrivalTime - @item.DepartureTime > 0)
+                {
+                    @String.Format(new DateTime(TimeSpan.FromSeconds(@item.ArrivalTime - @item.DepartureTime).Ticks).ToString("HH:mm"))
+                }
+                else
+                {
+                    int middle_night_seconds = 86400;
+                    @String.Format(new DateTime(TimeSpan.FromSeconds(@item.ArrivalTime + middle_night_seconds - @item.DepartureTime).Ticks).ToString("HH:mm"))
+                }
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Car)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Seat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OriginStationName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DestinationStationName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Price)
