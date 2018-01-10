@@ -3418,7 +3418,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jolde\\.nuget\\packages\\": {},
+    "C:\\Users\\Anca Grigoriu\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -3427,17 +3427,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\jolde\\Desktop\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj",
+      "projectUniqueName": "C:\\Users\\Anca Grigoriu\\Desktop\\git\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj",
       "projectName": "Data.Persistance",
-      "projectPath": "C:\\Users\\jolde\\Desktop\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj",
-      "packagesPath": "C:\\Users\\jolde\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jolde\\Desktop\\TrainManagement\\Data.Interfaces\\obj\\",
+      "projectPath": "C:\\Users\\Anca Grigoriu\\Desktop\\git\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj",
+      "packagesPath": "C:\\Users\\Anca Grigoriu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Anca Grigoriu\\Desktop\\git\\TrainManagement\\Data.Interfaces\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\jolde\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Anca Grigoriu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3450,8 +3450,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\jolde\\Desktop\\TrainManagement\\Data.Entities\\Data.Domain.csproj": {
-              "projectPath": "C:\\Users\\jolde\\Desktop\\TrainManagement\\Data.Entities\\Data.Domain.csproj"
+            "C:\\Users\\Anca Grigoriu\\Desktop\\git\\TrainManagement\\Data.Entities\\Data.Domain.csproj": {
+              "projectPath": "C:\\Users\\Anca Grigoriu\\Desktop\\git\\TrainManagement\\Data.Entities\\Data.Domain.csproj"
             }
           }
         }
