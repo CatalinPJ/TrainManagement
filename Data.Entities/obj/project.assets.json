@@ -2379,7 +2379,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Anca Grigoriu\\.nuget\\packages\\": {},
+    "C:\\Users\\Elisa\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -2388,17 +2388,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Anca Grigoriu\\Desktop\\git\\TrainManagement\\Data.Entities\\Data.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Elisa\\Desktop\\NET Last Version\\TrainManagement\\Data.Entities\\Data.Domain.csproj",
       "projectName": "Data.Domain",
-      "projectPath": "C:\\Users\\Anca Grigoriu\\Desktop\\git\\TrainManagement\\Data.Entities\\Data.Domain.csproj",
-      "packagesPath": "C:\\Users\\Anca Grigoriu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Anca Grigoriu\\Desktop\\git\\TrainManagement\\Data.Entities\\obj\\",
+      "projectPath": "C:\\Users\\Elisa\\Desktop\\NET Last Version\\TrainManagement\\Data.Entities\\Data.Domain.csproj",
+      "packagesPath": "C:\\Users\\Elisa\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Elisa\\Desktop\\NET Last Version\\TrainManagement\\Data.Entities\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Anca Grigoriu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Elisa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -23,6 +23,7 @@ namespace Presentation
         {
             Configuration = configuration;
         }
+
         /*
         public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
@@ -92,9 +93,9 @@ namespace Presentation
 
             /*
             app.UseStaticFiles();
+            */
 
             app.UseAuthentication();
-            */
 
             app.UseMvc(routes =>
             {
