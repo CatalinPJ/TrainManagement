@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Xml;
-using Data.Domain.Entities;
-using System;
 using System.Linq;
 
 namespace Data.Domain.Entities
@@ -12,8 +10,7 @@ namespace Data.Domain.Entities
         FileStream xmlStream;
         public DbPopulate()
         {
-            //xmlStream = new FileStream("trains.xml", FileMode.Open);
-            //trainReader = XmlReader.Create(xmlStream);
+
         }
         public List<Train> GetTrains()
         {

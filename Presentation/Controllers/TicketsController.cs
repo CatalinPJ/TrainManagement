@@ -115,6 +115,7 @@ namespace Presentation.Controllers
                 distance += node.Km / 1000;
             ticket.Km = distance;
             ticket.Price = (int)priceComputer.GetPrice(ticket);
+            ticket.Email = "petronel.catalin@gmail.com";
             _context.Add(ticket);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

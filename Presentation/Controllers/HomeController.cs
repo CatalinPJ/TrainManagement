@@ -13,15 +13,29 @@ namespace Presentation.Controllers
     public class HomeController : Controller
     {
         private readonly IRepository<Station> _repository;
+        private readonly IRepository<Ticket> _ticketRepository;
+        private readonly IRepository<Notification> _notificationRepository;
 
-        public HomeController(IRepository<Station> repository)
+        public HomeController(IRepository<Station> repository, IRepository<Ticket> ticketRepository, IRepository<Notification> notificationRepository)
         {
             _repository = repository;
+            _ticketRepository = ticketRepository;
+            _notificationRepository = notificationRepository;
         }
 
         public IActionResult Index()
         {
-            return View();
+            string mail = "petronel.catalin@gmail.com";
+            List<Ticket> tickets = _ticketRepository.GetAll().Where(o => o.Email == mail).ToList();
+            List<Notification> notifications = _notificationRepository.GetAll().ToList();
+            List<Notification> result = new List<Notification>();
+            foreach(Ticket ticket in tickets)
+            {
+                foreach (var notification in notifications)
+                    if (ticket.TrainNumber == notification.TrainNo)
+                        result.Add(notification);
+            }
+            return View(result);
         }
 
         public IActionResult About()

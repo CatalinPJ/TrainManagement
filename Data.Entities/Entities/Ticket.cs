@@ -14,7 +14,7 @@ namespace Data.Domain.Entities
         public string TrainNumber { get; set; }
         public string OriginStationName { get; set; }
         public string DestinationStationName { get; set; }
-        public Guid UserId { get; set; }
+        public string Email{ get; set; }
         public DateTime DepartureDate { get; set; }
         public long DepartureTime { get; set; }
         public long ArrivalTime { get; set; }

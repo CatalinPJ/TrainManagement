@@ -3437,7 +3437,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Elisa\\.nuget\\packages\\": {},
+    "C:\\Users\\jolde\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -3446,18 +3447,20 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Elisa\\Desktop\\NET Last Version\\TrainManagement\\Bussiness\\Bussiness.csproj",
+      "projectUniqueName": "C:\\Users\\jolde\\Desktop\\TrainManagement\\Bussiness\\Bussiness.csproj",
       "projectName": "Bussiness",
-      "projectPath": "C:\\Users\\Elisa\\Desktop\\NET Last Version\\TrainManagement\\Bussiness\\Bussiness.csproj",
-      "packagesPath": "C:\\Users\\Elisa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Elisa\\Desktop\\NET Last Version\\TrainManagement\\Bussiness\\obj\\",
+      "projectPath": "C:\\Users\\jolde\\Desktop\\TrainManagement\\Bussiness\\Bussiness.csproj",
+      "packagesPath": "C:\\Users\\jolde\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jolde\\Desktop\\TrainManagement\\Bussiness\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Elisa\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\jolde\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
@@ -3469,11 +3472,11 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\Elisa\\Desktop\\NET Last Version\\TrainManagement\\Data.Entities\\Data.Domain.csproj": {
-              "projectPath": "C:\\Users\\Elisa\\Desktop\\NET Last Version\\TrainManagement\\Data.Entities\\Data.Domain.csproj"
+            "C:\\Users\\jolde\\Desktop\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj": {
+              "projectPath": "C:\\Users\\jolde\\Desktop\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj"
             },
-            "C:\\Users\\Elisa\\Desktop\\NET Last Version\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj": {
-              "projectPath": "C:\\Users\\Elisa\\Desktop\\NET Last Version\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj"
+            "C:\\Users\\jolde\\Desktop\\TrainManagement\\Data.Entities\\Data.Domain.csproj": {
+              "projectPath": "C:\\Users\\jolde\\Desktop\\TrainManagement\\Data.Entities\\Data.Domain.csproj"
             }
           }
         }
@@ -3490,7 +3493,7 @@
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.0.0",
+            "version": "[2.0.0, )",
             "autoReferenced": true
           }
         },
