@@ -14,6 +14,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Rewrite;
+using System.Threading.Tasks;
+using System;
 
 namespace Presentation
 {
@@ -42,7 +44,7 @@ namespace Presentation
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IDatabaseContext, DatabaseContext>();
-//            services.AddTransient(typeof(IDatabaseContextGeneric<>), typeof(DatabaseContextGeneric<>));
+            //            services.AddTransient(typeof(IDatabaseContextGeneric<>), typeof(DatabaseContextGeneric<>));
             services.AddTransient(typeof(IRepository<>), typeof(GenericRepository<>));
 
 
@@ -53,10 +55,11 @@ namespace Presentation
             services.AddDbContext<DatabaseContext>(option => option.UseSqlServer(connectionString));
             services.AddMvc();
 
-           
+
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
+
 
             /*
             services.AddAuthentication().AddFacebook(facebookOptions =>
@@ -72,13 +75,13 @@ namespace Presentation
             */
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
-
             services.AddMvc();
 
         }
 
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider serviceProvider)
         {
             if (env.IsDevelopment())
             {

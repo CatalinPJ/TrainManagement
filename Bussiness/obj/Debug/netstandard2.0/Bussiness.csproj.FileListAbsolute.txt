@@ -113,3 +113,16 @@ C:\Users\Elisa\Desktop\NET Last Version\TrainManagement\Bussiness\obj\Debug\nets
 C:\Users\Elisa\Desktop\NET Last Version\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.AssemblyInfo.cs
 C:\Users\Elisa\Desktop\NET Last Version\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.dll
 C:\Users\Elisa\Desktop\NET Last Version\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.pdb
+D:\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Bussiness.deps.json
+D:\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Bussiness.dll
+D:\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Bussiness.pdb
+D:\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Data.Domain.dll
+D:\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Data.Persistance.dll
+D:\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Data.Domain.pdb
+D:\TrainManagement\Bussiness\bin\Debug\netstandard2.0\Data.Persistance.pdb
+D:\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.csprojResolveAssemblyReference.cache
+D:\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.csproj.CoreCompileInputs.cache
+D:\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.AssemblyInfoInputs.cache
+D:\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.AssemblyInfo.cs
+D:\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.dll
+D:\TrainManagement\Bussiness\obj\Debug\netstandard2.0\Bussiness.pdb

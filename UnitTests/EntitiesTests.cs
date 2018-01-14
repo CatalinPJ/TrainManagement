@@ -1,7 +1,7 @@
 using Data.Domain.Entities;
 using FluentAssertions;
 using Xunit;
-
+using Services;
 namespace UnitTests
 {
     public class EntitiesTests

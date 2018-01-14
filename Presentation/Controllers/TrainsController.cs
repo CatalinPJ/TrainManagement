@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Data.Domain.Entities;
 using Data.Domain.Interfaces;
 using Data.Persistance;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Presentation.Controllers
 {
@@ -49,6 +50,7 @@ namespace Presentation.Controllers
         }
 
         // GET: Trains/Create
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
@@ -59,6 +61,7 @@ namespace Presentation.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([Bind("Id,Category,CumulatedKm,OfficialNumber,Length,OperatorCode,OwnerCode,Rank,Weight")] Train train)
         {
             if (ModelState.IsValid)
@@ -72,6 +75,7 @@ namespace Presentation.Controllers
         }
 
         // GET: Trains/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(Guid? id)
         {
             if (id == null)
@@ -92,6 +96,7 @@ namespace Presentation.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(Guid id, [Bind("Id,Category,CumulatedKm,OfficialNumber,Length,OperatorCode,OwnerCode,Rank,Weight")] Train train)
         {
             if (id != train.Id)
@@ -123,6 +128,7 @@ namespace Presentation.Controllers
         }
 
         // GET: Trains/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(Guid? id)
         {
             if (id == null)
@@ -143,6 +149,7 @@ namespace Presentation.Controllers
         // POST: Trains/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
             var train = await _context.Trains.SingleOrDefaultAsync(m => m.Id == id);

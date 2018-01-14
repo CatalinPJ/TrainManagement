@@ -97,3 +97,14 @@ C:\Users\Elisa\Desktop\NET Last Version\TrainManagement\Data.Interfaces\obj\Debu
 C:\Users\Elisa\Desktop\NET Last Version\TrainManagement\Data.Interfaces\obj\Debug\netstandard2.0\Data.Persistance.AssemblyInfo.cs
 C:\Users\Elisa\Desktop\NET Last Version\TrainManagement\Data.Interfaces\obj\Debug\netstandard2.0\Data.Persistance.dll
 C:\Users\Elisa\Desktop\NET Last Version\TrainManagement\Data.Interfaces\obj\Debug\netstandard2.0\Data.Persistance.pdb
+D:\TrainManagement\Data.Interfaces\bin\Debug\netstandard2.0\Data.Persistance.deps.json
+D:\TrainManagement\Data.Interfaces\bin\Debug\netstandard2.0\Data.Persistance.dll
+D:\TrainManagement\Data.Interfaces\bin\Debug\netstandard2.0\Data.Persistance.pdb
+D:\TrainManagement\Data.Interfaces\bin\Debug\netstandard2.0\Data.Domain.dll
+D:\TrainManagement\Data.Interfaces\bin\Debug\netstandard2.0\Data.Domain.pdb
+D:\TrainManagement\Data.Interfaces\obj\Debug\netstandard2.0\Data.Persistance.csprojResolveAssemblyReference.cache
+D:\TrainManagement\Data.Interfaces\obj\Debug\netstandard2.0\Data.Persistance.csproj.CoreCompileInputs.cache
+D:\TrainManagement\Data.Interfaces\obj\Debug\netstandard2.0\Data.Persistance.AssemblyInfoInputs.cache
+D:\TrainManagement\Data.Interfaces\obj\Debug\netstandard2.0\Data.Persistance.AssemblyInfo.cs
+D:\TrainManagement\Data.Interfaces\obj\Debug\netstandard2.0\Data.Persistance.dll
+D:\TrainManagement\Data.Interfaces\obj\Debug\netstandard2.0\Data.Persistance.pdb

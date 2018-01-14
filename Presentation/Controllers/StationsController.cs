@@ -9,6 +9,7 @@ using Data.Domain.Entities;
 using Data.Persistance;
 using Presentation.DTOs;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Presentation.Controllers
 {
@@ -89,6 +90,7 @@ namespace Presentation.Controllers
         }
 
         // GET: Stations/Create
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
@@ -99,6 +101,7 @@ namespace Presentation.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create(StationDTO stationDTO)
         {
             var config = new MapperConfiguration(cfg => {
@@ -112,6 +115,7 @@ namespace Presentation.Controllers
         }
 
         // GET: Stations/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(Guid? id)
         {
             if (id == null)
@@ -132,6 +136,7 @@ namespace Presentation.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,OfficialCode")] Station station)
         {
             if (id != station.Id)
@@ -163,6 +168,7 @@ namespace Presentation.Controllers
         }
 
         // GET: Stations/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(Guid? id)
         {
             if (id == null)
@@ -183,6 +189,7 @@ namespace Presentation.Controllers
         // POST: Stations/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
             var station = await _context.Stations.SingleOrDefaultAsync(m => m.Id == id);

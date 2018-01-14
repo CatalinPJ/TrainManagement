@@ -10,9 +10,11 @@ using Data.Persistance;
 using Services;
 using AutoMapper;
 using Presentation.DTOs;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Presentation.Controllers
 {
+    [Authorize(Roles = "Admin,User")]
     public class TicketsController : Controller
     {
         private readonly DatabaseContext _context;

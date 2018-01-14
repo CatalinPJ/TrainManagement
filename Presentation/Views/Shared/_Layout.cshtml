@@ -36,7 +36,12 @@
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    <li><a asp-area="" asp-controller="Tickets" asp-action="Index">Tickets</a></li>
+                    @if (Context.User.Identity.IsAuthenticated)
+                    {
+
+                            <li><a asp-area="" asp-controller="Tickets" asp-action="Index">Tickets</a></li>
+
+                    }
                     <li><a asp-area="" asp-controller="Stations" asp-action="Index">Stations</a></li>
                     <li><a asp-area="" asp-controller="Trains" asp-action="Index">Trains</a></li>
                 </ul>
@@ -46,10 +51,6 @@
     </nav>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2017 - Train Management</p>
-        </footer>
     </div>
 
     <environment include="Development">
