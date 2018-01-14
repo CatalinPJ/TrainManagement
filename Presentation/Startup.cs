@@ -106,7 +106,27 @@ namespace Presentation
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            CreateRoles(serviceProvider).Wait();
 
+        }
+        private async Task CreateRoles(IServiceProvider serviceProvider)
+        {
+            var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            var UserManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+            string[] roles = { "Admin", "User" };
+
+            IdentityResult roleResult;
+
+            foreach (var role in roles)
+            {
+
+                var roleExist = await RoleManager.RoleExistsAsync(role);
+                if (!roleExist)
+                {
+                    roleResult = await RoleManager.CreateAsync(new IdentityRole(role));
+                }
+
+            }
         }
     }
 }
