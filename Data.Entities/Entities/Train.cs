@@ -9,6 +9,7 @@ namespace Data.Domain.Entities
         {
             Id = Guid.NewGuid();
             RouteNodes = new List<RouteNode>();
+            Wagons = new List<Wagon> { new Wagon() { Class = 1 }, new Wagon() { Class = 2 } };
         }
 
         public Guid Id { get; set; }
@@ -27,5 +28,6 @@ namespace Data.Domain.Entities
         public long DepartureTime { get; set; }
         public long ArrivalTime { get; set; }
         public List<RouteNode> RouteNodes { get; set; }
+        public List<Wagon> Wagons { get; set; }
     }
 }

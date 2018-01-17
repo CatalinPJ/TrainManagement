@@ -12,5 +12,8 @@ namespace Data.Persistance
         DbSet<Data.Domain.Entities.Station> Stations { get; set; }
         DbSet<Data.Domain.Entities.RouteNode> RouteNodes { get; set; }
         DbSet<Data.Domain.Entities.Notification> Notifications { get; set; }
+        DbSet<Data.Domain.Entities.Payment> Payments { get; set; }
+        DbSet<Data.Domain.Entities.Wagon> Wagons { get; set; }
+        DbSet<Data.Domain.Entities.News> News { get; set; }
     }
 }

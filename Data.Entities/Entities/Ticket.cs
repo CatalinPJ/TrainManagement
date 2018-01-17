@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace Data.Domain.Entities
 {
     public class Ticket
@@ -26,7 +28,7 @@ namespace Data.Domain.Entities
         public int Pet { get; set; }
         public int Bike { get; set; }
         public int Car { get; set; }
-        public int Seat { get; set; }
+        public string Seats { get; set; }  //temporary solution
         public int Price { get; set; }
     }
 }

@@ -16,5 +16,6 @@ namespace Data.Persistance
         public DbSet<Data.Domain.Entities.Notification> Notifications { get; set; }
         public DbSet<Data.Domain.Entities.News> News { get; set; }
         public DbSet<Data.Domain.Entities.Payment> Payments { get; set; }
+        public DbSet<Data.Domain.Entities.Wagon> Wagons { get; set; }
     }
 }

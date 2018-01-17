@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Data.Domain.Entities;
 using Data.Persistance;
 using Services;
 using AutoMapper;
 using Presentation.DTOs;
-using Microsoft.AspNetCore.Authorization;
 
 namespace Presentation.Controllers
 {
@@ -83,7 +81,7 @@ namespace Presentation.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(TicketDTO ticketDTO, string to, string from, Guid trainId)
+        public IActionResult Create(TicketDTO ticketDTO, string to, string from, Guid trainId)
         {
             Train train = _context.Trains.Include("RouteNodes")
              .FirstOrDefault(m => m.Id == trainId);
@@ -117,10 +115,20 @@ namespace Presentation.Controllers
                 distance += node.Km / 1000;
             ticket.Km = distance;
             ticket.Price = (int)priceComputer.GetPrice(ticket);
-//            ticket.Email = "petronel.catalin@gmail.com";
             ticket.Email = this.User.Identity.Name;
+            //ticket.Email = "petronel.catalin@gmail.com";
+            Shuffler shuffler = new Shuffler();
+            List<int> list = new List<int>();
+            for (int i = 1; i <= 100; i++)
+                list.Add(i);
+            shuffler.Shuffle(list);
+            for (int i = 0; i < source.Adults + source.Children + source.Students;i++)
+                ticket.Seats += list[i] + "; ";
+            ticket.Car = new Random().Next(1, 2);
             _context.Add(ticket);
-            await _context.SaveChangesAsync();
+            //Wagon wagon = _context.Trains.Include("Wagons").FirstOrDefault(m => m.Id == trainId).Wagons.FirstOrDefault(o => o.Class == source.Class);
+            //_context.Update(wagon);
+            _context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
 

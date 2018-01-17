@@ -25,7 +25,7 @@ namespace Presentation.Controllers
         // GET: Trains
         public async Task<IActionResult> Index()
         {
-            return View(_repository.GetAll());
+            return  View(_repository.GetAll());
         }
 
         // GET: Trains/Details/5
@@ -36,7 +36,7 @@ namespace Presentation.Controllers
                 return NotFound();
             }
 
-            var train = await _context.Trains.Include("RouteNodes")
+            var train = await _context.Trains.Include("RouteNodes").Include("Wagons")
                 .SingleOrDefaultAsync(m => m.OfficialNumber == officialNumber);
             if (train == null)
             {

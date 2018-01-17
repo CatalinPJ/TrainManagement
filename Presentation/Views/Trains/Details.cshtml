@@ -59,6 +59,18 @@
         <dd>
             @Html.DisplayFor(model => model.Weight)
         </dd>
+        <dt>
+            Class 1 seats:
+        </dt>
+        <dd>
+           @Model.Wagons.FirstOrDefault(o=>o.Class == 1).Seats
+        </dd>
+        <dt>
+            Class 2 seats:
+        </dt>
+        <dd>
+           @Model.Wagons.FirstOrDefault(o => o.Class == 2).Seats
+        </dd>
     </dl>
     <table class="table table-striped">
         <thead>
