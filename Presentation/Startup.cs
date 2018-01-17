@@ -106,26 +106,54 @@ namespace Presentation
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-            CreateRoles(serviceProvider).Wait();
+            CreateRoles(serviceProvider);
 
         }
-        private async Task CreateRoles(IServiceProvider serviceProvider)
+        private void CreateRoles(IServiceProvider serviceProvider)
         {
-            var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-            var UserManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
-            string[] roles = { "Admin", "User" };
 
-            IdentityResult roleResult;
+            var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            var userManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+            Task<IdentityResult> roleResult;
+            string email = "trainmanagement@gmail.com";
 
-            foreach (var role in roles)
+            //Verificam daca exista rolul de Admin, altfel il cream
+            Task<bool> hasAdminRole = roleManager.RoleExistsAsync("Admin");
+            hasAdminRole.Wait();
+
+            if (!hasAdminRole.Result)
             {
+                roleResult = roleManager.CreateAsync(new IdentityRole("Admin"));
+                roleResult.Wait();
+            }
+            //Verificam daca exista rolul de User, altfel il cream
+            Task<bool> hasUserRole = roleManager.RoleExistsAsync("User");
+            hasUserRole.Wait();
 
-                var roleExist = await RoleManager.RoleExistsAsync(role);
-                if (!roleExist)
+            if (!hasUserRole.Result)
+            {
+                roleResult = roleManager.CreateAsync(new IdentityRole("User"));
+                roleResult.Wait();
+            }
+            //Verificam daca exista un client cu emailul dat altfel cream un Admin suprem cu acest email
+
+            Task<ApplicationUser> testUser = userManager.FindByEmailAsync(email);
+            testUser.Wait();
+
+            if (testUser.Result == null)
+            {
+                ApplicationUser admin = new ApplicationUser();
+                admin.Email = email;
+                admin.UserName = email;
+
+                Task<IdentityResult> newUser = userManager.CreateAsync(admin, "Ana_are_2_mere");
+                newUser.Wait();
+
+                if (newUser.Result.Succeeded)
                 {
-                    roleResult = await RoleManager.CreateAsync(new IdentityRole(role));
+                    Task<IdentityResult> newUserRole = userManager.AddToRoleAsync(admin, "Admin");
+                    newUserRole.Wait();
                 }
-
             }
         }
     }
