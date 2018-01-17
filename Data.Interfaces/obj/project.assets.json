@@ -3418,7 +3418,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Stefan\\.nuget\\packages\\": {},
+    "C:\\Users\\Anca Grigoriu\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -3427,17 +3427,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Stefan\\Documents\\TrainManagementJanuary\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj",
+      "projectUniqueName": "C:\\Users\\Anca Grigoriu\\Desktop\\git\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj",
       "projectName": "Data.Persistance",
-      "projectPath": "C:\\Users\\Stefan\\Documents\\TrainManagementJanuary\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj",
-      "packagesPath": "C:\\Users\\Stefan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Stefan\\Documents\\TrainManagementJanuary\\TrainManagement\\Data.Interfaces\\obj\\",
+      "projectPath": "C:\\Users\\Anca Grigoriu\\Desktop\\git\\TrainManagement\\Data.Interfaces\\Data.Persistance.csproj",
+      "packagesPath": "C:\\Users\\Anca Grigoriu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Anca Grigoriu\\Desktop\\git\\TrainManagement\\Data.Interfaces\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Stefan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Anca Grigoriu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3450,8 +3450,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\Stefan\\Documents\\TrainManagementJanuary\\TrainManagement\\Data.Entities\\Data.Domain.csproj": {
-              "projectPath": "C:\\Users\\Stefan\\Documents\\TrainManagementJanuary\\TrainManagement\\Data.Entities\\Data.Domain.csproj"
+            "C:\\Users\\Anca Grigoriu\\Desktop\\git\\TrainManagement\\Data.Entities\\Data.Domain.csproj": {
+              "projectPath": "C:\\Users\\Anca Grigoriu\\Desktop\\git\\TrainManagement\\Data.Entities\\Data.Domain.csproj"
             }
           }
         }
@@ -3467,16 +3467,16 @@
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
-            "version": "[2.0.1, )"
+            "version": "2.0.1"
           },
           "Microsoft.EntityFrameworkCore.Tools": {
             "target": "Package",
-            "version": "[2.0.1, )"
+            "version": "2.0.1"
           },
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[2.0.0, )",
+            "version": "2.0.0",
             "autoReferenced": true
           }
         },
