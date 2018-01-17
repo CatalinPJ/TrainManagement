@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Presentation.Controllers
 {
-    [Authorize(Roles = "Admin,User")]
+    //[Authorize(Roles = "Admin,User")]
     public class TicketsController : Controller
     {
         private readonly DatabaseContext _context;
@@ -117,7 +117,8 @@ namespace Presentation.Controllers
                 distance += node.Km / 1000;
             ticket.Km = distance;
             ticket.Price = (int)priceComputer.GetPrice(ticket);
-            ticket.Email = "petronel.catalin@gmail.com";
+//            ticket.Email = "petronel.catalin@gmail.com";
+            ticket.Email = this.User.Identity.Name;
             _context.Add(ticket);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

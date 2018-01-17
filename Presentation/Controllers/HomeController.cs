@@ -25,7 +25,8 @@ namespace Presentation.Controllers
 
         public IActionResult Index()
         {
-            string mail = "petronel.catalin@gmail.com";
+//            string mail = "petronel.catalin@gmail.com";
+            string mail = this.User.Identity.Name;
             List<Ticket> tickets = _ticketRepository.GetAll().Where(o => o.Email == mail).ToList();
             List<Notification> notifications = _notificationRepository.GetAll().ToList();
             List<Notification> result = new List<Notification>();
