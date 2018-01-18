@@ -83,6 +83,7 @@ namespace Presentation.Controllers
              .FirstOrDefault(m => m.Id == trainId);
             Ticket ticket = new Ticket();
             ticket.TrainNumber = train.OfficialNumber;
+            ticket.Email = this.User.Identity.Name;
             _context.Add(ticket);
             _context.SaveChanges();
             return RedirectToAction(nameof(Index));
