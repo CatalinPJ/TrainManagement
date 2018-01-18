@@ -40,9 +40,9 @@
     <div class="col-md-12">
 <table class="table">
     <thead>
-        <tr> 
+        <tr>
             <th>
-                Buy
+                Action
             </th>
             <th>
                 Train No
@@ -74,9 +74,10 @@
     @foreach (var train in Model)
     {
             <tr>
-                
                 <td>
                     <a asp-area="" asp-controller="Tickets" asp-action="Create" asp-route-trainId=@train.Id asp-route-from=@ViewBag.originStationName asp-route-to=@ViewBag.destinationStationName>Buy</a>
+               |
+                    <a asp-area="" asp-controller="Tickets" asp-action="Follow" asp-route-trainId=@train.Id>Follow</a>
                 </td>
                 <td>
                    <a asp-area="" asp-controller="Trains" asp-action="Details" asp-route-primaryStations=@ViewBag.primaryStations asp-route-officialNumber=@train.OfficialNumber>@(train.Category + train.OfficialNumber)</a>

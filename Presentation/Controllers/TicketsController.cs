@@ -76,6 +76,18 @@ namespace Presentation.Controllers
             ViewBag.to = to;
             return View(source);
         }
+
+        public IActionResult Follow(Guid trainId)
+        {
+            Train train = _context.Trains.Include("RouteNodes")
+             .FirstOrDefault(m => m.Id == trainId);
+            Ticket ticket = new Ticket();
+            ticket.TrainNumber = train.OfficialNumber;
+            _context.Add(ticket);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
+
         // POST: Tickets/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
