@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Data.Domain.Entities.Notification>
+﻿@model Data.Domain.Entities.Infos
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -91,8 +91,8 @@
         <div class="container">
 
             <ul class="nav nav-pills">
-                <li class="active"><a data-toggle="pill" href="#news">News</a></li>
-                <li><a data-toggle="pill" href="#notifications">Notifications (@Model.Count())</a></li>
+                <li class="active"><a data-toggle="pill" href="#news">News (@Model.News.Count())</a></li>
+                <li><a data-toggle="pill" href="#notifications">Notifications (@Model.Notifications.Count())</a></li>
             </ul>
 
             <div class="tab-content">
@@ -102,25 +102,14 @@
                             <div class="col-lg-12">
                                 <hr />
                             </div>
-                            <div class="col-md-12">
-                                Disruption between East Croydon and Uckfield expected until 21:00
-                                <hr />
-                            </div>
-                            <div class="col-md-12">
-                                Disruption between New Cross Gate and Norwood Junction / Crystal Palace expected until 21:00
-                                <hr />
-                            </div>
-                            <div class="col-md-12">
-                                Disruption at Bournemouth expected until 20:00
-                                <hr />
-                            </div>
-                            <div class="col-md-12">
-                                Amended late night / early morning Great Western Railway services between Reading and Didcot Parkway / Bedwyn from Monday 18 December to Friday 22 December
-                                <hr />
-                            </div>
-                            <div class="col-md-12">
-                                Major improvement work between Preston and Blackpool from Saturday 11 November until Sunday 25 March
-                            </div>
+                            @foreach (var item in Model.News)
+                            {
+                        <div class="col-md-12">
+                            @item.Content <br/> Added at: @item.DateAdded
+                            <hr />
+                        </div>
+
+                            }
                         </div>
                     </div>
                 </div>
@@ -130,10 +119,10 @@
                             <div class="col-lg-12">
                                 <hr />
                             </div>
-                            @foreach (var item in Model)
+                            @foreach (var item in Model.Notifications)
                             {
                                 <div class="col-md-12">
-                                   @item.Message
+                                   @item.Message  (@item.TrainNo)
                                     <hr />
                                 </div>
 

@@ -25,7 +25,7 @@ namespace Presentation.Controllers
         // GET: Tickets
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Tickets.ToListAsync());
+            return View(await _context.Tickets.Where(o => o.Price > 0).ToListAsync());
         }
 
         // GET: Tickets/Details/5

@@ -63,6 +63,7 @@ namespace Presentation.Controllers
             });
             IMapper mapper = config.CreateMapper();
             var news = mapper.Map<NewsDTO, News>(newsDTO);
+            news.DateAdded = DateTime.Now;
             _context.Add((object)news);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

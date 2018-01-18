@@ -15,12 +15,14 @@ namespace Presentation.Controllers
         private readonly IRepository<Station> _repository;
         private readonly IRepository<Ticket> _ticketRepository;
         private readonly IRepository<Notification> _notificationRepository;
+        private readonly IRepository<News> _newsRepository;
 
-        public HomeController(IRepository<Station> repository, IRepository<Ticket> ticketRepository, IRepository<Notification> notificationRepository)
+        public HomeController(IRepository<Station> repository, IRepository<Ticket> ticketRepository, IRepository<Notification> notificationRepository, IRepository<News> newsRepository)
         {
             _repository = repository;
             _ticketRepository = ticketRepository;
             _notificationRepository = notificationRepository;
+            _newsRepository = newsRepository;
         }
 
         public IActionResult Index()
@@ -29,13 +31,14 @@ namespace Presentation.Controllers
             string mail = this.User.Identity.Name;
             List<Ticket> tickets = _ticketRepository.GetAll().Where(o => o.Email == mail).ToList();
             List<Notification> notifications = _notificationRepository.GetAll().ToList();
-            List<Notification> result = new List<Notification>();
+            Infos result = new Infos();
             foreach (Ticket ticket in tickets)
             {
                 foreach (var notification in notifications)
                     if (ticket.TrainNumber == notification.TrainNo)
-                        result.Add(notification);
+                        result.Notifications.Add(notification);
             }
+            result.News = _newsRepository.GetAll().ToList();
             return View(result);
         }
 
