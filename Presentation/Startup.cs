@@ -117,7 +117,7 @@ namespace Presentation
             string email = "trainmanagement@gmail.com";
 
             //Verificam daca exista rolul de Admin, altfel il cream
-            /*Task<bool> hasAdminRole = roleManager.RoleExistsAsync("Admin");
+            Task<bool> hasAdminRole = roleManager.RoleExistsAsync("Admin");
             hasAdminRole.Wait();
 
             if (!hasAdminRole.Result)
@@ -153,7 +153,7 @@ namespace Presentation
                     Task<IdentityResult> newUserRole = userManager.AddToRoleAsync(admin, "Admin");
                     newUserRole.Wait();
                 }
-            }*/
+            }
         }
     }
 }
